@@ -1,0 +1,77 @@
+@import "./fonts/Objectivity/objectivity.css";
+@import "./fonts/IBMPlexMono/ibm-plex-mono.css";
+
+* {
+    margin: 0;
+    transition: all 200ms ease;
+}
+
+// Root styling
+:root {
+    // Fonts
+    --main-font: 'Objectivity';
+    --un-prose-font-mono: 'IBM Plex Mono';
+
+    // Overrides
+    *::-webkit-scrollbar {
+        width: 0.6rem;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--main-colour-1);
+        opacity: 0.5;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: var(--contrast-colour-1);
+        border-radius: 10px;
+    }
+
+    // Background
+    #background {
+        transform: scale(1.1);
+    }
+
+    // Social media colouring
+    --twitter: #1da1f2;
+    --youtube: #ff0000;
+    --live: #6441a4;
+    --patreon: #ff6a06;
+    --discord: #214cc2;
+
+    .patreon {
+        background: var(--patreon);
+        color: #882c00;
+    }
+
+    .youtube {
+        background: var(--youtube);
+        color: #770000;
+    }
+
+    code::before, code::after {
+        content: none;
+    }
+
+    a {
+        &:hover, &:focus {
+            filter: drop-shadow(0 0 .75rem currentColor);
+            transform: scale(1.05) rotate(-1deg);
+        }
+    }
+}
+
+.abyss {
+    // Colour palette
+    --base-col-1: hsl(280 100% 90%);
+    --base-col-2: hsl(280 70% 70%);
+    --base-col-3: hsl(280 80% 6% / 70%);
+
+    --saturated-col-1: hsl(340 100% 60%);
+    --saturated-col-2: hsl(340 100% 30%);
+    --saturated-col-3: hsl(340 100% 10%);
+
+    --pop-col-1: hsl(45 90% 50%);
+    --pop-col-2: hsl(40 70% 30%);
+    --pop-col-3: hsl(40 70% 15%);
+}

@@ -1,0 +1,112 @@
+/* OBJECTIVITY Font face */
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Objectivity"), url(./Objectivity-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 100;
+  src: local("Objectivity"), url(./Objectivity-LightSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Objectivity"), url(./Objectivity-Thin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 200;
+  src: local("Objectivity"), url(./Objectivity-ThinSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Objectivity"), url(./Objectivity-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Objectivity"), url(./Objectivity-RegularSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Objectivity"), url(./Objectivity-Medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Objectivity"), url(./Objectivity-MediumSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Objectivity"), url(./Objectivity-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 500;
+  src: local("Objectivity"), url(./Objectivity-BoldSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Objectivity"), url(./Objectivity-ExtraBold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Objectivity"), url(./Objectivity-ExtraBoldSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Objectivity"), url(./Objectivity-Black.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Objectivity"), url(./Objectivity-BlackSlanted.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Objectivity"), url(./Objectivity-Super.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: italic;
+  font-weight: 800;
+  src: local("Objectivity"), url(./Objectivity-SuperSlanted.woff2) format("woff2");
+}
