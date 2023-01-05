@@ -25,7 +25,8 @@ const config = {
 			],
 			shortcuts: [
 				{
-					"box": "bg-base-col-3 text-base-col-1 rounded-2 mx-auto text-center p-5"
+					"box": "bg-base-col-3 text-base-col-1 rounded-2 mx-auto text-center p-5",
+					"btn": ""
 				},
 			],
 		}),

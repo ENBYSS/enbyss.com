@@ -1,10 +1,12 @@
 <script lang="ts">
+	import LinkBar from "$lib/link-bar.svelte";
 	import PageLink from "./page-link.svelte";
 
-    const stream = {
-        id: "random",
-        name: "name",
-    };
+    // const stream = {
+    //     id: "random",
+    //     name: "name",
+    // };
+    const stream = undefined;
 </script>
 
 <div class="flex flex-col gap-3 items-center relative">
@@ -19,7 +21,7 @@
     {#if stream}
         <div class="box w-90% max-w-500px">
             <h1 class="text-6xl font-700 hover:tracking-1">
-                <a href={stream.id} class="font-600"> Live! </a>
+                <a href="/live" class="font-600"> Live! </a>
             </h1>
             <h2 class="text-xl font-500 italic">
                 { stream.name }
@@ -45,6 +47,10 @@
             </a>
         </div>
     {/if}
+
+    <div class="box mx-auto p-0 rounded-3 flex text-3xl overflow-hidden w-25rem">
+        <LinkBar />
+    </div>
 
     <div class="box mx-auto max-w-700px flex flex-col gap-7">
         <div>
