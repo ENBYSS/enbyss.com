@@ -1,5 +1,6 @@
 <script lang="ts">
     import LinkBar from "./link-bar.svelte";
+	import Menu from "./menu.svelte";
 import Ticker from "./ticker.svelte";
 
     let collapsed = true;
@@ -43,13 +44,26 @@ import Ticker from "./ticker.svelte";
         </a>
     {/each}
 
-    <!-- EnLinkBar -->
     <div class="box rounded-0 p-0 text-3xl overflow-hidden">
         <LinkBar />
     </div>
 
-    <div class="z-20 w-full flex flex-col items-center gap-2 mt-2">
-        <!-- EnMenu -->
+    <div class="z-20 w-full flex flex-col items-center gap-2">
+        <Menu
+            label="Themes"
+            groups={[
+                {
+                    name: "Themes",
+                    items: [
+                        {
+                            label: 'abyss',
+                            handler: () => console.log("Picked theme."),
+                        }
+                    ]
+                }
+            ]}
+            max_height="300px"
+        />
     </div>
 </nav>
 

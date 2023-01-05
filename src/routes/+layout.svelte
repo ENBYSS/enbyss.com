@@ -69,6 +69,16 @@
         }
     }
 
+    :global(button) {
+        border: none;
+        outline: none;
+    }
+
+    :global(.btn) {
+        border-radius: 1em;
+        padding: .4em 1em;
+    }
+
     .abyss {
         #background {
             filter: blur(15px) sepia(1.0) saturate(500%) hue-rotate(260deg) brightness(30%);
