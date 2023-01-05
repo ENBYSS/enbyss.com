@@ -12,9 +12,9 @@ Hey! Decided that since Blaseball is coming back, and my tools are effectively d
 
 Especially because I've migrated from using *tailwind* to *UnoCSS* heh.
 
-<!-- ::note
+::note
 Just know that my site uses Vue - specifically **Nuxt**. These tools were written back when I used **Nuxt 2** with **JS**, though now I'm using **Nuxt 3**. As a result it'll help to have familiarity with Nuxt or Vue, but I'll try my best to present the logic as platform-agnostic as possible.
-:: -->
+::
 
 # Initial data
 
@@ -56,7 +56,7 @@ So, first of all we have the **initial data** to shape the state of the tool. Th
 
 Now that's a lot, but it's also simple. 
 
-- **Gift Tiers:** How gifts worked was by having other teams *fund* you, and each subsequent gift ends up costing exponentially more. For example, the first gift costs **1 million** coins, the second costs **3 million**. In other words, $3^n \cdot 10^6$ where $n$ is the gift number.
+- **Gift Tiers:** How gifts worked was by having other teams *fund* you, and each subsequent gift ends up costing exponentially more. For example, the first gift costs **1 million** coins, the second costs **3 million**. In other words, $$ 3^n \cdot 10^6 $$ where $n$ is the gift number.
 - **Teams:** This is pretty easy - it just maps each ID to the appropriate team so that we can know *what* team we're actually tracking progress for.
 
 The other two need to be populated by *logic*, so they're initialized as empty. Let's get to that.
