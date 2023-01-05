@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { fly } from "svelte/transition";
+	import { clickOutside } from "./directives/click_outside";
     export let groups: {
         name: string
         items: {
@@ -13,13 +15,13 @@
     const toggle = () => open = !open;
 </script>
 
-<div class="w-full m-0 p-0">
+<div class="w-full m-0 p-0" use:clickOutside on:click_outside={() => open = false}>
     <button class={`btn w-full !rounded-0 !py-2.5 ${open ? 'open-btn' : ''}`} on:click={toggle}>
         { label }
     </button>
 
     {#if open}
-        <div style={`max-height: ${max_height}`} class="z-99 box absolute mt-2 left-0 p-0 w-full origin-top-right items rounded-md bg-base-col-3 shadow-lg outline-white ring-opacity focus:outline-none overflow-auto">
+        <div transition:fly={{ y: -10, duration: 100 }} style={`max-height: ${max_height}`} class="z-99 box absolute mt-2 left-0 p-0 w-full origin-top-right items rounded-md bg-base-col-3 shadow-lg outline-white ring-opacity focus:outline-none overflow-auto">
             {#each groups as group (group.name)}
                 <div class="flex flex-col gap-2 p-3">
                     <p class="text-sm italic font-bold"> { group.name } </p>
