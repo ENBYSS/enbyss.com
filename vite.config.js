@@ -30,7 +30,13 @@ const config = {
 			],
 		}),
 		sveltekit(),
-	]
+	],
+	build: {
+		sourcemap: process.env.NODE_ENV !== 'production',
+		rollupOptions: {
+			cache: false
+		}
+	}
 };
 
 export default config;
