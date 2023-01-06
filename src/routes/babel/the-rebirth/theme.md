@@ -16,7 +16,7 @@ From the moment I started 2 years ago, I knew I wanted to have a dark theme and 
 
 In CSS, a very large amount of things are inherited. Infact, you can set things based on compound rules.
 
-```css
+```scss
 .dark-theme .container {
     background: black;
 }
@@ -119,7 +119,7 @@ Of course, this posed a new problem - _there's a lot of colours_. This approach,
 This gave each theme _2_ groups of colours - with the defining feature being that _every colour in one group, must contrast with the one in the other._ So if I set the background to `--main-1` - I _need_ to use a `--contrast-` colour for the text. In addition, I gave each group **5 colours,** totaling to 10. This felt like a good balance between _too_ many colours, which would increasingly complicate things, and too _few_ colours, which would limit expression. Of course, if in the future I wanted to add more colours - I could simply add more variables.
 
 But of course, why limit to _colours?_ This could work with everything. 
-```css
+```scss
 .dark-theme {
     --rounded-sm: 5px;
     --rounded-md: 8px;
@@ -137,7 +137,7 @@ But of course, why limit to _colours?_ This could work with everything.
 
 Say hello to `:root`.
 
-```CSS
+```scss
 :root {
     --rounded-lg: 15px;
 }
@@ -153,7 +153,7 @@ Say hello to `:root`.
 
 This way, if themes do _not_ override the variable, it would just default to the one in `:root`. This way, the `:root` can be _immensely_ complicated with a **lot** of variables, however individual themes can end up as simple as defining their colour scheme and nothing else. So if we want to assign the ticker background...
 
-```css
+```scss
 :root {
     --ticker-bg: linear-gradient(90deg, var(--main-1), var(--main-2));
 }
@@ -182,7 +182,7 @@ For example, how do I darken #482FA0 _while_ keeping the hue and saturation? Har
 
 As a result, I setup variables to work like this instead.
 
-```css
+```scss
 .dark-theme {
     --m1: 20 100% 20%;
     // ...
@@ -198,7 +198,7 @@ As a result, I setup variables to work like this instead.
 
 You can see the problem. So of course - the solution would be to put these variables _inside_ the `<html>` element. The perfect target turned out to be `<body>`.
 
-```css
+```scss
 :root {
     --opacity: 80%;
 }

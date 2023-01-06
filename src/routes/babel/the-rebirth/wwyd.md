@@ -173,11 +173,11 @@ This was the first thing I did before anything else. I started working on making
 
 And so, the _Theme Engine_ was born.
 
-<!-- ::page-nav
+::page-nav
 ---
 prevLink: "/babel/articles/series/the-rebirth/intro"
 prevLabel: "The Rebirth"
 nextLink: "/babel/articles/series/the-rebirth/theme"
 nextLabel: "The Theme Engine"
 ---
-:: -->
+::

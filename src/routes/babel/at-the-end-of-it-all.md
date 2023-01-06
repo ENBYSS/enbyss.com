@@ -234,4 +234,4 @@ _"See you."_
 
 <h2 style="text-align: center">0 minutes.</h2>
 
-<h1 style="text-align: center">THE END</h2>
+<h1 style="text-align: center">THE END</h1>
