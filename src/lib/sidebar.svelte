@@ -1,15 +1,13 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { clickOutside } from "./directives/click_outside";
     import LinkBar from "./link-bar.svelte";
 	import Menu from "./menu.svelte";
+	import { theme } from "./stores";
 import Ticker from "./ticker.svelte";
 
     let collapsed = true;
     const i_prefix = "i-material-symbols"
-
-    $: {
-        console.log(collapsed);
-    }
 
     const links = {
         "tools": "/tools",
@@ -63,7 +61,19 @@ import Ticker from "./ticker.svelte";
                         items: [
                             {
                                 label: 'abyss',
-                                handler: () => console.log("Picked theme."),
+                                handler: () => theme.set("abyss"),
+                            },
+                            {
+                                label: 'nebula',
+                                handler: () => theme.set("nebula"),
+                            },
+                            {
+                                label: 'the star',
+                                handler: () => theme.set("the-star"),
+                            },
+                            {
+                                label: 'nightlife',
+                                handler: () => theme.set("nightlife"),
                             }
                         ]
                     }

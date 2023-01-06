@@ -27,7 +27,7 @@
                     <p class="text-sm italic font-bold"> { group.name } </p>
                     {#each group.items as item (item.label)}
                         <div>
-                            <button on:click={item.handler} class="cursor-pointer hover:scale-105 py-1 menu-btn group w-full">
+                            <button on:click={item.handler} class="cursor-pointer hover:scale-105 menu-btn group">
                                 { item.label }
                             </button>
                         </div>
@@ -54,6 +54,9 @@
     }
 
     .menu-btn {
-        background: var(--base-col-2);
+        background: var(--saturated-col-3);
+        color: var(--saturated-col-1);
+        padding: .5em 1.2em;
+        border-radius: .5em;
     }
 </style>

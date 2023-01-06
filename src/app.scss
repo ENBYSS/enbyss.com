@@ -76,20 +76,47 @@
     --pop-col-3: hsl(40 70% 15%);
 }
 
-.sibr {
-    --base-col-1: hsl(280 100% 90%);
-    --base-col-2: hsl(280 70% 70%);
-    --base-col-3: hsl(280 80% 10%);
+.nebula {
+    // Colour palette
+    --base-col-1: hsl(280 80% 10%);
+    --base-col-2: hsl(280 50% 50%);
+    --base-col-3: hsl(280 100% 90%);
 
-    --complement-col-1: hsl(190 100% 90%);
-    --complement-col-2: hsl(190 70% 70%);
-    --complement-col-3: hsl(190 80% 20%);
+    --saturated-col-1: hsl(340 100% 20%);
+    --saturated-col-2: hsl(340 100% 30%);
+    --saturated-col-3: hsl(340 100% 90%);
 
-    --pop-col-1: hsl(350 100% 90%);
-    --pop-col-2: hsl(350 70% 70%);
-    --pop-col-3: hsl(350 80% 20%);
+    --pop-col-1: hsl(40 90% 20%);
+    --pop-col-2: hsl(40 90% 30%);
+    --pop-col-3: hsl(45 90% 90%);
+}
 
-    --pop-col-alt-1: hsl(20 100% 90%);
-    --pop-col-alt-2: hsl(20 70% 70%);
-    --pop-col-alt-3: hsl(20 80% 20%);
+.the-star {
+    // Colour palette
+    --base-col-1: hsl(200 80% 10%);
+    --base-col-2: hsl(200 50% 50%);
+    --base-col-3: hsl(200 100% 90%);
+
+    --saturated-col-1: hsl(330 100% 20%);
+    --saturated-col-2: hsl(330 100% 30%);
+    --saturated-col-3: hsl(330 100% 90%);
+
+    --pop-col-1: hsl(20 90% 20%);
+    --pop-col-2: hsl(20 90% 30%);
+    --pop-col-3: hsl(25 90% 90%);
+}
+
+.nightlife {
+    // Colour palette
+    --base-col-1: hsl(200 100% 90%);
+    --base-col-2: hsl(200 70% 70%);
+    --base-col-3: hsl(200 80% 6%);
+
+    --saturated-col-1: hsl(330 100% 60%);
+    --saturated-col-2: hsl(330 100% 30%);
+    --saturated-col-3: hsl(330 100% 10%);
+
+    --pop-col-1: hsl(45 90% 50%);
+    --pop-col-2: hsl(40 70% 30%);
+    --pop-col-3: hsl(40 70% 15%);
 }

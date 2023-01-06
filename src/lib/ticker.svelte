@@ -15,9 +15,11 @@
 </div>
 
 <style lang="scss">
-    :global(.abyss) {
-        .ticker {
-            background: linear-gradient(90deg, var(--base-col-3), var(--saturated-col-2));
+    .ticker {
+        background: var(--saturated-col-3);
+
+        :global(*) {
+            color: var(--saturated-col-1);
         }
     }
 

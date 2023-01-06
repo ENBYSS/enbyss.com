@@ -39,9 +39,9 @@ import type { PageData } from "./$types";
             <h2> Status Filters </h2>
         </Title>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="option-container">
             {#each valid_filters.status as status (status)}
-                <button class={`btn px-4 ${currentStatus === status ? '!invert-100' : ''}`} on:click={() => currentStatus = status}> 
+                <button class:active={currentStatus === status} class="option-btn" on:click={() => currentStatus = status}> 
                     {status}
                 </button>
             {/each}
@@ -51,9 +51,9 @@ import type { PageData } from "./$types";
             <h2> Type Filters </h2>
         </Title>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="option-container">
             {#each valid_filters.type as type (type)}
-                <button class={`btn px-4 ${currentType === type ? '!invert-100' : ''}`} on:click={() => currentType = type}> 
+                <button class:active={currentType === type} class="option-btn" on:click={() => currentType = type}> 
                     {type}
                 </button>
             {/each}
@@ -63,9 +63,9 @@ import type { PageData } from "./$types";
             <h2> Edit Filters </h2>
         </Title>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="option-container">
             {#each valid_filters.edit as edit (edit)}
-                <button class={`btn px-4 ${currentEdit === edit ? '!invert-100' : ''}`} on:click={() => currentEdit = edit}> 
+                <button class:active={currentEdit === edit} class="option-btn" on:click={() => currentEdit = edit}> 
                     {edit}
                 </button>
             {/each}
@@ -86,3 +86,31 @@ import type { PageData } from "./$types";
         {/each}
     </div>
 </div>
+
+<style lang="scss">
+    .option-container {
+        display: flex;
+        flex-wrap: 1;
+        border-radius: .5em;
+        overflow: hidden;
+    }
+
+    .option-btn {
+        padding: .6em 1em;
+        background: var(--base-col-1);
+        color: var(--base-col-3);
+        cursor: pointer;
+
+        &.active {
+            background: var(--base-col-3);
+            color: var(--base-col-1);
+            cursor: default;
+        }
+
+        &:hover:not(.active) {
+            background: var(--saturated-col-1);
+            color: var(--saturated-col-3);
+            padding: .6em 1.5em;
+        }
+    }
+</style>

@@ -88,9 +88,9 @@ import type { PageData } from "./$types";
             <h2> Interest Filters </h2>
         </Title>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="option-container">
             {#each filter.interest.allowed as interest (interest)}
-                <button class={`btn px-4 ${filter.interest.current === interest ? '!invert-100' : ''}`} on:click={() => filter.interest.current = interest}> 
+                <button class:active={filter.interest.current === interest} class="option-btn" on:click={() => filter.interest.current = interest}> 
                     {interest}
                 </button>
             {/each}
@@ -100,9 +100,9 @@ import type { PageData } from "./$types";
             <h2> Status Filters </h2>
         </Title>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="option-container">
             {#each filter.status.allowed as stat (stat)}
-                <button class={`btn px-4 ${filter.status.current === stat ? '!invert-100' : ''}`} on:click={() => filter.status.current = stat}> 
+                <button class:active={filter.status.current === stat} class="option-btn" on:click={() => filter.status.current = stat}> 
                     {stat}
                 </button>
             {/each}
@@ -117,3 +117,31 @@ import type { PageData } from "./$types";
         {/each}
     </div>
 </div>
+
+<style lang="scss">
+    .option-container {
+        display: flex;
+        flex-wrap: 1;
+        border-radius: .5em;
+        overflow: hidden;
+    }
+
+    .option-btn {
+        padding: .6em 1em;
+        background: var(--base-col-1);
+        color: var(--base-col-3);
+        cursor: pointer;
+
+        &.active {
+            background: var(--base-col-3);
+            color: var(--base-col-1);
+            cursor: default;
+        }
+
+        &:hover:not(.active) {
+            background: var(--saturated-col-1);
+            color: var(--saturated-col-3);
+            padding: .6em 1.5em;
+        }
+    }
+</style>

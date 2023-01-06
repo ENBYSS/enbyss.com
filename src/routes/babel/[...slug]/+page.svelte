@@ -6,8 +6,6 @@
 
     const metadata = data.meta;
 
-    console.log(metadata);
-
     const format_date = (date: string) => new Date(date).toLocaleDateString('en', {
         year: "numeric",
         month: "short",
