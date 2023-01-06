@@ -1,7 +1,8 @@
 <script lang="ts">
+    import type { PageData } from "./$types";
     import Title from "$lib/title.svelte";
-import type { PageData } from "./$types";
 	import Cluster from "./cluster.svelte";
+    import autoAnimate from "@formkit/auto-animate";
 
     export let data: PageData;
 
@@ -76,7 +77,7 @@ import type { PageData } from "./$types";
         </Title>
     </div>
 
-    <div class="max-w-800px flex flex-col gap-4">
+    <ul class="cluster-container" use:autoAnimate>
         {#each filteredHistory as entry (entry.id)}
             <Cluster
                 item={entry}
@@ -84,10 +85,18 @@ import type { PageData } from "./$types";
                 videos={entry.videos}
             />
         {/each}
-    </div>
+    </ul>
 </div>
 
 <style lang="scss">
+    .cluster-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        flex: 1 1 0px;
+        max-width: 800px;
+        padding: 0;
+    }
     .option-container {
         display: flex;
         flex-wrap: 1;

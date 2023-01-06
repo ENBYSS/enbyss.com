@@ -22,7 +22,7 @@
 </script>
 
 <div class="flex flex-col gap-8">
-    <div class="flex flex-wrap w-screen justify-center">
+    <div class="flex flex-wrap w-screen justify-center gap-5">
         <Metric
             label="main"
             value={data.youtube.stats.main.subs}

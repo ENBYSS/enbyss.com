@@ -38,7 +38,7 @@
     let opened: boolean = false;
 </script>
 
-<div class="box flex flex-col w-full gap-3">
+<li class="box flex flex-col w-full gap-3">
     <!-- Name -->
     <div class="flex gap-4 items-center justify-center">
         <a href={item.link} class="font-600 text-base-col-2 text-6">
@@ -127,4 +127,13 @@
             </tbody>
         </table>
     {/if}
-</div>
+</li>
+
+<style lang="scss">
+    li {
+        list-style: none;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+    }
+</style>

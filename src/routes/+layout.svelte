@@ -7,6 +7,8 @@
 	import type { PageData } from "./$types";
 	import { theme } from "$lib/stores";
 	import IpxImage from "$lib/ipx-image.svelte";
+	import { page } from "$app/stores";
+	import { fly } from "svelte/transition";
 
     const theme_bgs = {
         "abyss": "dark.webp",
@@ -35,7 +37,12 @@
         <!-- <img src="https://enbyss.com/_ipx/w_400,q_70/https://files.enbyss.com/images/backgrounds/dark.webp" alt="background"/> -->
         <IpxImage src={`https://files.enbyss.com/images/backgrounds/${theme_bgs[$theme]}`} alt="background" ipx={{ width: 400, quality: 70 }} />
     </div>
-    <slot></slot>
+
+    {#key data.pathname}
+        <div in:fly={{ x: -10, duration: 200, delay: 200 }} out:fly={{ x: 5, duration: 200 }}>
+            <slot />
+        </div>
+    {/key}
 </div>
 
 <div class="mb-30" />

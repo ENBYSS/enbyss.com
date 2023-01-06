@@ -1,13 +1,10 @@
 <script lang="ts">
 	import Title from "$lib/title.svelte";
-import type { PageData } from "./$types";
+    import type { PageData } from "./$types";
 	import Item from "./item.svelte";
+    import autoAnimate from "@formkit/auto-animate";
 
     export let data: PageData;
-
-    const interestMap = {
-        none: "hue-rotate"
-    }
 
     const interests = [
         "none",
@@ -23,16 +20,6 @@ import type { PageData } from "./$types";
         "demo",
         "upcoming",
     ]
-
-    const interest_map = interests.reduce((a, b, i) => {
-        a[b] = `hue-rotate-${i*30}`;
-        return a;
-    }, {} as {[key: string]: string});
-
-    const status_map = status.reduce((a, b, i) => {
-        a[b] = `hue-rotate-${i*30 + 150}`;
-        return a;
-    }, {} as {[key: string]: string});
 
     const filter = {
         interest: {
@@ -109,16 +96,23 @@ import type { PageData } from "./$types";
         </div>
     </div>
 
-    <div class="flex flex-col gap-5">
-        {#each sorted as item}
-            <div class="grow">
+    <ul class="flex flex-col gap-5" use:autoAnimate>
+        {#each sorted as item (item.name)}
+            <li class="grow">
                 <Item {item}/>
-            </div>
+            </li>
         {/each}
-    </div>
+    </ul>
 </div>
 
 <style lang="scss">
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+
     .option-container {
         display: flex;
         flex-wrap: 1;

@@ -40,6 +40,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@formkit/auto-animate": "^1.0.0-beta.5",
 		"js-cookie": "^3.0.1",
 		"p-limit": "^4.0.0",
 		"rehype-autolink-headings": "^6.1.1",
