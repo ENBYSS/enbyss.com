@@ -148,7 +148,7 @@ See I thought it was plug and play, I just followed the instructions [laid out h
 
 Then _Nuxt Bridge..._
 
-```npm
+```sh
 npm install -D @nuxt/bridge@npm:@nuxt/bridge-edge
 ```
 

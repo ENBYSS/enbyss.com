@@ -13,11 +13,10 @@ interface Metadata {
 
 export const load = (async ({ params }) => {
     console.log(params);
-    const post = await import(`../${params.slug}.md`);
+    const post = await import(/* @vite-ignore */ `/src/routes/babel/${params.slug}.md`);
+        
     const { title, date } = post.metadata;
     const content = post.default;
-
-    console.log(Object.keys(post));
 
     return {
         content,
