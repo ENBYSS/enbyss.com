@@ -5,11 +5,43 @@
 
 
     export let data: PageData;
+
+    let sorted_schedule = data.schedule.map(s => ({ ...s, when: Date.parse(s.when) }));
+
+    $: {
+        const now = Date.now();
+        const score = (when: number) => when > now ? when * 1 : 1e20 - when;
+        sorted_schedule = sorted_schedule.sort((a, b) => score(a.when) - score(b.when));
+    }
 </script>
 
-<div class="flex flex-col gap-3">
+<!-- 
+    BASIS: 5
+
+    9
+    8
+    7
+    6
+
+    4
+    3
+    2
+    1
+
+    6
+    7
+    8
+    9
+
+    4
+    3
+    2
+    1
+ -->
+
+<div class="flex flex-col gap-3 items-center">
     <Title>
-        <h1> Schedules </h1>
+        <h1> Schedule </h1>
     </Title>
 
     <!-- Use live logic -->
@@ -32,23 +64,38 @@
         </div>
     {/if}
 
-    <Title>
-        <h2> Upcoming </h2>
-    </Title>
-
     <!-- copy buttons -->
 
-    {#each data.schedule as item (item.name + item.subtitle)}
-        <div class="grow">
-            <Entry
-                time={Date.parse(item.when)}
-                name={item.name}
-                subtitle={item.subtitle}
-                description={item.description}
-                link={item.link}
-                type={item.type}
-                image={item.image}
-            />
-        </div>
-    {/each}
+    <div class="entry-list">
+        {#each sorted_schedule as item (item.name + item.subtitle)}
+            <div class="entry" class:expired={item.when < Date.now()}>
+                <Entry
+                    time={item.when}
+                    name={item.name}
+                    subtitle={item.subtitle}
+                    description={item.description}
+                    link={item.link}
+                    type={item.type}
+                    image={item.image}
+                />
+            </div>
+        {/each}
+    </div>
 </div>
+
+<style lang="scss">
+    .entry-list {
+        max-width: 800px;
+        display: flex;
+        flex: 1 1 0px;
+        flex-direction: column;
+        gap: .5em;
+    }
+
+    .entry {
+        &.expired {
+            filter: saturate(.7);
+            transform: scale(.95);
+        }
+    }
+</style>

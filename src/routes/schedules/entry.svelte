@@ -1,4 +1,6 @@
 <script lang="ts">
+	import IpxImage from "$lib/ipx-image.svelte";
+
     export let time: number;
     export let name: string;
     export let subtitle: string = "";
@@ -6,6 +8,24 @@
     export let link: string;
     export let type: "stream" | "video";
     export let image: string;
+    
+    let now = Date.now();
+    setInterval(() => now = Date.now(), 1000);
+
+    let countdown = "00:00:00";
+    $: if (now) {
+        if (time > now) {
+            const diff = time - now;
+
+            const secs = diff / 1000;
+            const mins = secs / 60;
+            const hrs  = mins / 60;
+
+            const digit = (num: number) => Math.floor(num).toLocaleString('en', { minimumIntegerDigits: 2 });
+
+            countdown = `${digit(hrs)}:${digit(mins%60)}:${digit(secs%60)}`;
+        }
+    }
 
     const datetime = (() => {
         const seconds = Math.floor(time / 1000);
@@ -62,64 +82,150 @@
     })()
 </script>
 
-<div class="flex flex-col mx-auto max-w-800px bg-base-col-3 rounded-3 p-4 z-10 relative">
-    <div class="flex flex-row gap-x-4">
-        <div class={`top-3 right-5 absolute py-1 px-5 rounded-2 scale-120 max-w-80px max-h-20px ${type}-schedule-tag`}>
-            {type}
+<div class="item-container">
+    <div class="item-image">
+        <IpxImage src={image} alt={name} ipx={{ width: 120, height: 120 }} />
+    </div>
+
+    <div class="item-info">
+        <div class="date">
+            <p class="day"> {datetime.weekday} </p>
+            <p class="full"> {datetime.day} {datetime.month} </p>
         </div>
-
-        <div class="rounded-sm overflow-hidden max-w-[120px] md:mb-0 relative shrink-0">
-            <img src={image} alt={name} class="rounded-3 w-120px h-120px" />
+        <div class="topic">
+            <span class="name"> {name} </span>
+            <span class="subtitle"> {subtitle} </span>
         </div>
-
-        <div class="flex flex-col grow sm:text-left text-right">
-            <div class="flex flex-row-reverse sm:flex-row justify-start gap-x-3">
-                <div>
-                    <button on:click={() => alert("UNIMPLEMENTED!")} class="btn flex flex-row">
-                        <!-- Update when copy functionality added -->
-                        {#if true}
-                            <div class="i-mdi:clipboard-check inline-block text-4" />
-                        {:else}
-                            <div class="i-mdi:clipboard-text inline-block text-4" />
-                        {/if}
-                        <div class="i-ph:clock-fill inline-block text-4 ml-1" />
-                    </button>
-                </div>
-                <div>
-                    <p class="font-bold text-saturated-col-1 text-md -mb-1"> { datetime.weekday } </p>
-                    <p class="font-bold text-pop-col-1 italic text-2xl"> { datetime.day } {datetime.month} </p>
-                </div>
-            </div>
-
-            <p class="font-500 italic text-xl text-contrast">
-                <!-- time Until -->
-            </p>
-
-            <p class="font-600 text-base-col-2">
-                {name}
-                <span class="italic text-saturated-col-1 font-500 text-3.7"> {subtitle} </span>
-            </p>
-
-            <p class="font-300 text-3.5 mt-1"> {description} </p>
+        <div class="description">
+            {description}
         </div>
     </div>
-    <a href={link} class="btn mt-3 py-2 rounded-2 transition duration-100 flex justify-center" target="_blank" rel="noreferrer">
-        {#if link.includes("youtu")}
-            <div class="i-mdi:youtube mr-2 "/> link
-        {:else if link.includes("patreon")}
-            <div class="i-mdi:patreon mr-2 "/> link
-        {/if}
-    </a>
+
+    {#if link.includes("youtu")}
+        <a class="link youtube-link" href={link} target="_blank" rel="noreferrer">
+            <div class="i-mdi:youtube"/>
+        </a>
+    {:else if link.includes("patreon")}
+        <a class="link patreon-link" href={link} target="_blank" rel="noreferrer">
+            <div class="i-mdi:patreon"/>
+        </a>
+    {/if}
+
+
+    <div class={`item-type ${type}`}>
+        {type}
+    </div>
+
+    {#if time > now}
+        <div class="countdown">
+            { countdown }
+        </div>
+    {/if}
 </div>
 
 <style lang="scss">
-    .stream-schedule-tag {
-        background: hsl(280 100% 20%);
-        color: hsl(280 100% 90%);
+    .item-container {
+        display: flex;
+        position: relative;
+        background: var(--base-col-3);
+        border-radius: 1em;
+        overflow: hidden;
+        gap: 1em;
     }
 
-    .video-schedule-tag {
-        background: hsl(0 100% 20%);
-        color: hsl(0 100% 90%);
+    .item-image {
+        :global(img) {
+            height: 100%;
+            max-width: 120px;
+        }
+    }
+
+    .item-info {
+        padding: 1em 2.5em 1em 0em;
+
+        .date {
+            .day {
+                color: var(--pop-col-1);
+                font-weight: 700;
+                font-size: 1.1em;
+            }
+            .full {
+                color: var(--saturated-col-1);
+                font-weight: 600;
+                font-size: 1.5em;
+            }
+        }
+
+        .topic {
+            .name {
+                font-weight: 600;
+                color: var(--base-col-2);
+                font-size: 1em;
+            }
+            .subtitle {
+                font-weight: 500;
+                color: var(--base-col-1);
+                font-size: .9em;
+                font-style: italic;
+            }
+        }
+
+        .description {
+            font-weight: 300;
+            font-size: .9em;
+        }
+    }
+
+    .link {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 30px;
+        background: var(--saturated-col-1);
+        color: var(--saturated-col-3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        &.youtube-link {
+            filter: hue-rotate(60deg);
+        }
+
+        &:hover, &:focus {
+            width: 50px;
+
+            div {
+                transform: scale(2);
+            }
+        }
+    }
+
+    .item-type {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: var(--saturated-col-3);
+        color: var(--saturated-col-1);
+        padding: .3em 1em;
+        border-top-right-radius: .8em;
+
+        &.video {
+            filter: hue-rotate(30deg);
+        }
+    }
+
+    .countdown {
+        position: absolute;
+        top: .5em;
+        right: 3em;
+        font-family: "IBM Plex Mono";
+        font-size: .9em;
+        color: var(--base-col-3);
+        background: var(--base-col-1);
+        font-weight: 700;
+        padding: .1em .8em;
+        border-radius: .4em;
+        z-index: 1;
     }
 </style>

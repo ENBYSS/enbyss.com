@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { page } from "$app/stores";
 	import { clickOutside } from "./directives/click_outside";
     import LinkBar from "./link-bar.svelte";
 	import Menu from "./menu.svelte";
 	import { theme } from "./stores";
-import Ticker from "./ticker.svelte";
+    import Ticker from "./ticker.svelte";
 
     let collapsed = true;
-    const i_prefix = "i-material-symbols"
 
     const links = {
         "tools": "/tools",
