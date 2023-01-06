@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Title from "$lib/title.svelte";
-import type { PageData } from "./$types";
+    import type { PageData } from "./$types";
 
     export let data: PageData;
 
@@ -9,7 +9,7 @@ import type { PageData } from "./$types";
 
 <div class="flex flex-col items-center gap-2">
     <Title>
-        <h1> BABEL </h1>
+        <h1> Babel </h1>
     </Title>
 
     <div class="flex rounded-2 overflow-hidden">
