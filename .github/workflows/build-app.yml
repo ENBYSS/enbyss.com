@@ -9,4 +9,11 @@ jobs:
     steps:
       - name: Pull repository
         uses: actions/checkout@v3
-      - run: ls
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - name: Installing dependencies
+        uses: npm i
+      - name: Building site
+        uses: npm run build
+      - name: DEBUG
+        uses: ls
