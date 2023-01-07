@@ -1,5 +1,6 @@
 <script lang="ts">
 	import IpxImage from "$lib/ipx-image.svelte";
+    import autoAnimate from "@formkit/auto-animate";
 	import type { Post } from "./+layout";
 
     const get_img = (path: string) => `https://files.enbyss.com/images/content/${path}`;
@@ -12,8 +13,9 @@
     export let posts: Post[];
 </script>
 
-<div class="post-list">
-    {#each posts as post}
+<ul class="post-list" use:autoAnimate>
+    {#each posts as post (post.path)}
+    <li>
         <a href={post.path} class="post-container grow">
             {#if post.meta.image && post.meta.image.src && post.meta.image.alt}
                 <div class="post-image">
@@ -45,10 +47,17 @@
                 </div>
             </div>
         </a>
+    </li>
     {/each}
-</div>
+</ul>
 
 <style lang="scss">
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
     .post-list {
         display: flex;
         flex-direction: column;

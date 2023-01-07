@@ -12,7 +12,7 @@
             <h2 class="group-name"> {group.name} </h2>
         </div>
         {#each group.items as tool (tool.link)}
-            <a href={tool.link} class="tool-container">
+            <a href={'/tools/' + tool.link} class="tool-container" class:disabled={tool.status === "broken"}>
                 <div class="tool-info">
                     <p class="name"> {tool.name} </p>
                     <p class="description"> {tool.description} </p>
@@ -35,6 +35,7 @@
         background: var(--base-col-1);
         color: var(--base-col-3);
         padding: .8em;
+        border-radius: .4em;
     }
     .tool-container {
         background: var(--base-col-3);
@@ -43,6 +44,13 @@
         padding: 1em 1em;
         border-radius: .5em;
         overflow: hidden;
+
+        &.disabled {
+            filter: saturate(0);
+            cursor: default;
+            user-select: none;
+            pointer-events: none;
+        }
 
         .tool-info {
             .name {

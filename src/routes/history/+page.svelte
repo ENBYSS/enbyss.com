@@ -3,6 +3,8 @@
     import Title from "$lib/title.svelte";
 	import Cluster from "./cluster.svelte";
     import autoAnimate from "@formkit/auto-animate";
+	import OptionBar from "$lib/option-bar.svelte";
+	import Head from "$lib/head.svelte";
 
     export let data: PageData;
 
@@ -30,6 +32,12 @@
     }
 </script>
 
+<Head
+    title="History"
+    description="A historical look at all previous streams."
+    image="metadata/history.png"
+/>
+
 <div class="flex flex-col items-center gap-3">
     <Title>
         <h1> History </h1>
@@ -40,37 +48,31 @@
             <h2> Status Filters </h2>
         </Title>
 
-        <div class="option-container">
-            {#each valid_filters.status as status (status)}
-                <button class:active={currentStatus === status} class="option-btn" on:click={() => currentStatus = status}> 
-                    {status}
-                </button>
-            {/each}
-        </div>
+        <OptionBar
+            options={valid_filters.status}
+            initial="all"
+            bind:picked={currentStatus}
+        />
 
         <Title>
             <h2> Type Filters </h2>
         </Title>
 
-        <div class="option-container">
-            {#each valid_filters.type as type (type)}
-                <button class:active={currentType === type} class="option-btn" on:click={() => currentType = type}> 
-                    {type}
-                </button>
-            {/each}
-        </div>
+        <OptionBar
+            options={valid_filters.type}
+            initial="all"
+            bind:picked={currentType}
+        />
 
         <Title>
             <h2> Edit Filters </h2>
         </Title>
 
-        <div class="option-container">
-            {#each valid_filters.edit as edit (edit)}
-                <button class:active={currentEdit === edit} class="option-btn" on:click={() => currentEdit = edit}> 
-                    {edit}
-                </button>
-            {/each}
-        </div>
+        <OptionBar
+            options={valid_filters.edit}
+            initial="all"
+            bind:picked={currentEdit}
+        />
 
         <Title>
             <h3> {filteredHistory.length} entries </h3>
@@ -96,30 +98,5 @@
         flex: 1 1 0px;
         max-width: 800px;
         padding: 0;
-    }
-    .option-container {
-        display: flex;
-        flex-wrap: 1;
-        border-radius: .5em;
-        overflow: hidden;
-    }
-
-    .option-btn {
-        padding: .6em 1em;
-        background: var(--base-col-1);
-        color: var(--base-col-3);
-        cursor: pointer;
-
-        &.active {
-            background: var(--base-col-3);
-            color: var(--base-col-1);
-            cursor: default;
-        }
-
-        &:hover:not(.active) {
-            background: var(--saturated-col-1);
-            color: var(--saturated-col-3);
-            padding: .6em 1.5em;
-        }
     }
 </style>

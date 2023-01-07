@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Head from "$lib/head.svelte";
 	import { fix_and_outro_and_destroy_block } from "svelte/internal";
 	import type { PageData } from "./$types";
 	import Metric from "./metric.svelte";
@@ -20,6 +21,12 @@
         second: "numeric",
     });
 </script>
+
+<Head
+    title="Support"
+    description="Multiple statistics, and thanks for all of my supporters."
+    image="backgrounds/dark.webp"
+/>
 
 <div class="flex flex-col gap-8">
     <div class="flex flex-wrap w-screen justify-center gap-5">

@@ -1,13 +1,16 @@
 <script lang="ts">
+	import Head from "$lib/head.svelte";
 	import LinkBar from "$lib/link-bar.svelte";
 	import PageLink from "./page-link.svelte";
 
-    // const stream = {
-    //     id: "random",
-    //     name: "name",
-    // };
     const stream = undefined;
 </script>
+
+<Head
+    title="Abyss"
+    description="Welcome to the Abyss."
+    image="backgrounds/dark.webp"
+/>
 
 <div class="flex flex-col gap-3 items-center relative">
     <div class="display-none">

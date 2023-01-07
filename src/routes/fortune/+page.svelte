@@ -3,6 +3,8 @@
     import type { PageData } from "./$types";
 	import Item from "./item.svelte";
     import autoAnimate from "@formkit/auto-animate";
+	import OptionBar from "$lib/option-bar.svelte";
+	import Head from "$lib/head.svelte";
 
     export let data: PageData;
 
@@ -61,6 +63,12 @@
     });
 </script>
 
+<Head
+    title="Fortune"
+    description="A look into what's being considered, including excitement."
+    image="metadata/fortune.png"
+/>
+
 <div class="flex flex-col gap-3">
     <Title>
         <h1> Fortune </h1>
@@ -75,25 +83,21 @@
             <h2> Interest Filters </h2>
         </Title>
 
-        <div class="option-container">
-            {#each filter.interest.allowed as interest (interest)}
-                <button class:active={filter.interest.current === interest} class="option-btn" on:click={() => filter.interest.current = interest}> 
-                    {interest}
-                </button>
-            {/each}
-        </div>
+        <OptionBar
+            options={filter.interest.allowed}
+            initial="all"
+            bind:picked={filter.interest.current}
+        />
 
         <Title>
             <h2> Status Filters </h2>
         </Title>
 
-        <div class="option-container">
-            {#each filter.status.allowed as stat (stat)}
-                <button class:active={filter.status.current === stat} class="option-btn" on:click={() => filter.status.current = stat}> 
-                    {stat}
-                </button>
-            {/each}
-        </div>
+        <OptionBar
+            options={filter.status.allowed}
+            initial="all"
+            bind:picked={filter.status.current}
+        />
     </div>
 
     <ul class="flex flex-col gap-5" use:autoAnimate>
@@ -111,31 +115,5 @@
     }
     li {
         list-style: none;
-    }
-
-    .option-container {
-        display: flex;
-        flex-wrap: 1;
-        border-radius: .5em;
-        overflow: hidden;
-    }
-
-    .option-btn {
-        padding: .6em 1em;
-        background: var(--base-col-1);
-        color: var(--base-col-3);
-        cursor: pointer;
-
-        &.active {
-            background: var(--base-col-3);
-            color: var(--base-col-1);
-            cursor: default;
-        }
-
-        &:hover:not(.active) {
-            background: var(--saturated-col-1);
-            color: var(--saturated-col-3);
-            padding: .6em 1.5em;
-        }
     }
 </style>

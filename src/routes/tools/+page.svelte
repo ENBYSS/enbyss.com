@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Head from "$lib/head.svelte";
     import OptionBar from "$lib/option-bar.svelte";
 	import type { PageData } from "./$types";
 	import ToolList from "./tool-list.svelte";
@@ -14,10 +15,20 @@
     }
 </script>
 
-<OptionBar
-    options={["all"].concat(data.tools.map(t => t.name.toLowerCase()))}
-    initial={"all"}
-    bind:picked={active}
+<Head
+    title="Tools"
+    description="Things I've made to make other things easier."
+    image="backgrounds/dark.webp"
 />
+
+<div class="flex justify-center">
+    <OptionBar
+        options={["all"].concat(data.tools.map(t => t.name.toLowerCase()))}
+        initial={"all"}
+        bind:picked={active}
+    />
+</div>
+
+<div class="mb-4"/>
 
 <ToolList tools={tools}/>

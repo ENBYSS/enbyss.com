@@ -10,6 +10,7 @@ export const load = (async ({ cookies, url }) => {
         cookies.set("__enbyss_theme", "abyss", {
             maxAge: 10e10,
             httpOnly: false,
+            path: "/"
         });
         cookie_theme = "abyss";
     }

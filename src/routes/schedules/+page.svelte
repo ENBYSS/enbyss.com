@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Head from "$lib/head.svelte";
 	import Title from "$lib/title.svelte";
 	import type { PageData } from "./$types";
 	import Entry from "./entry.svelte";
@@ -15,29 +16,11 @@
     }
 </script>
 
-<!-- 
-    BASIS: 5
-
-    9
-    8
-    7
-    6
-
-    4
-    3
-    2
-    1
-
-    6
-    7
-    8
-    9
-
-    4
-    3
-    2
-    1
- -->
+<Head
+    title="Schedule"
+    description="The When and Where of things in the Abyss"
+    image="metadata/schedules.webp"
+/>
 
 <div class="flex flex-col gap-3 items-center">
     <Title>

@@ -4,6 +4,7 @@ type status =
     | "complete"
     | "in progress"
     | "upcoming"
+    | "broken"
 
 export interface Tool {
     link: string
@@ -25,7 +26,7 @@ const tools: Tool[] = [
                 name: "Channel Point Icons",
                 description: "Generate the icons for Twitch channel points, in all three sizes.",
                 link: "channel-point-icons",
-                status: "complete"
+                status: "broken"
             },
             {
                 name: "Twitch-Resolve Marker Converter",
@@ -42,7 +43,7 @@ const tools: Tool[] = [
             {
                 name: "Item Codex",
                 description: "Lookup for items and their recipes.",
-                link: "codex",
+                link: "satisfactory-codex",
                 status: "complete",
             },
         ]
