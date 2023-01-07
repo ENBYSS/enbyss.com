@@ -7,10 +7,11 @@
     export let data: PageData;
 
     let active = "all";
-    let posts = data.posts;
+    const sorted_posts = data.posts.sort((a, b) => Date.parse(b.meta.createdAt) - Date.parse(a.meta.createdAt))
+    let posts = sorted_posts;
 
     $: if (active) {
-        posts = data.posts.filter(p => active === "all" || p.meta.category === active);
+        posts = sorted_posts.filter(p => active === "all" || p.meta.category === active);
     }
 </script>
 

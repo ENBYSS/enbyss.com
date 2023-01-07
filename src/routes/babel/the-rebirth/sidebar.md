@@ -1,7 +1,10 @@
 ---
 title: Sidebar vs. Header - IV
 description: Why did I do the switch? And how did making the Sidebar go?
-category: articles
+category: article
+series:
+    name: rebirth
+    part: 4
 image:
     src: 'rebirth/4.sidebar.webp'
     alt: 'Sidebar vs. Header - IV'

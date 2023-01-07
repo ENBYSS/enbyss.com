@@ -1,7 +1,7 @@
 ---
 title: Golang and Simplicity
 description: A come-around from someone who used to hate Go.
-category: articles
+category: article
 image:
     src: 'golang-and-simplicity.webp'
     alt: 'Revisiting Golang'

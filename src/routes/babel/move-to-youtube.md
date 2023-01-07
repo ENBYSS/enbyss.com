@@ -1,13 +1,9 @@
 ---
 title: Moving to Youtube.
 description: I decided to move to Youtube. Here's why.
-tags: ["life", "personal", "blogging"]
-showtoc: false
-category: announcement # name of directory
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: announcement
 createdAt: 2021-09-12
 updatedAt: 2021-09-12
-embed: https://www.youtube-nocookie.com/embed/x2vLZq8UrNA
 ---
 
 <div class="video-wrap">

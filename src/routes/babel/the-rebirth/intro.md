@@ -1,7 +1,10 @@
 ---
 title: The Rebirth - I.
 description: We're doing it again.
-category: articles
+category: article
+series:
+    name: rebirth
+    part: 1
 image:
     src: 'rebirth/1.intro.webp'
     alt: 'The Rebirth - I'

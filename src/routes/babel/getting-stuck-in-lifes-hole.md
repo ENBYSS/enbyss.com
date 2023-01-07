@@ -1,11 +1,10 @@
 ---
 title: Life's Hole
 description: Keep moving, or the hole will get you.
-tags: ["life", "personal", "blogging"]
-showtoc: true
-category: articles # name of directory
-metaimage: 'getting-stuck-in-lifes-hole.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: article
+image:
+    src: "getting-stuck-in-lifes-hole.png"
+    alt: "getting stuck in lifes hole"
 createdAt: 2020-12-08
 updatedAt: 2020-12-08
 ---

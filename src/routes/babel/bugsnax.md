@@ -1,13 +1,12 @@
 ---
 title: "Bugsnax burnt me out."
 description: It might be me, but the themes of the game leave me whiplashed, and the puzzles sometimes leave me tired.
-tags: ["Bugsnax", "puzzle", "game"]
-showtoc: false
-category: reviews
-rating: 6
-ratingSummary: "While I understand its appeal, and adore the design of the world and its bugsnax, the characters annoyed me and some puzzles left me exasperated."
-metaimage: 'bugsnax.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: review
+#rating: 6
+#ratingSummary: "While I understand its appeal, and adore the design of the world and its bugsnax, the characters annoyed me and some puzzles left me exasperated."
+image:
+  src: "bugsnax.png"
+  alt: "bugsnax"
 createdAt: 2021-01-21
 updatedAt: 2021-01-21
 ---

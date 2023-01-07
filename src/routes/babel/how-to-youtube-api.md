@@ -1,12 +1,10 @@
 ---
 title: Using The Youtube API.
 description: It was such a contrived experience that I made this as a note for future me.
-tags: ["tech", "tutorial-like", "blogging"]
-showtoc: true
-category: articles # name of directory
-imageAbsoluteLink: true
-metaimage: 'https://www.enbyss.com/content-images/how-to-youtube-api.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: article
+image:
+  src: "how-to-youtube-api.png"
+  alt: "how to use the youtube api"
 createdAt: 2021-09-12
 updatedAt: 2021-09-14
 ---

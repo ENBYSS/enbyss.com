@@ -1,11 +1,10 @@
 ---
 title: Scraping vs. The Youtube API.
 description: Who needs the Youtube API when you have scraping?
-tags: ["tech", "tutorial-like", "blogging"]
-showtoc: true
-category: articles # name of directory
-metaimage: 'fuck-the-api.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: article
+image:
+  src: 'fuck-the-api.png'
+  alt: 'scraping vs. the youtube api'
 createdAt: 2021-09-14
 updatedAt: 2021-09-14
 ---

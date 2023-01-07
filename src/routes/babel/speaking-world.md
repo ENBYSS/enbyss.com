@@ -1,9 +1,11 @@
 ---
 title: Speaking World.
 description: A lost soul, and the world that spoke. A narrative poem of sorts.
-category: stories # name of directory
+category: story
 metaimage: 'speaking-world.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+image:
+    src: "speaking-world.png"
+    alt: "speaking world"
 createdAt: 2022-06-27
 updatedAt: 2022-06-27
 ---

@@ -1,11 +1,10 @@
 ---
 title: Legacy
 description: A personal rambling about legacies and the stories we leave behind.
-tags: ["thoughts"]
-showtoc: false
-category: articles # name of directory
-metaimage: 'legacy.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: article
+image:
+    src: "legacy.png"
+    alt: "legacy"
 createdAt: 2022-04-10
 updatedAt: 2022-04-10
 ---

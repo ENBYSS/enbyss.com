@@ -1,7 +1,10 @@
 ---
 title: State of APIs - V
 description: States, and serverless functions. Why are they linked? Well...
-category: articles
+category: article
+series:
+    name: rebirth
+    part: 5
 image:
     src: 'rebirth/5.stateofapis.webp'
     alt: 'State of APIs - V'

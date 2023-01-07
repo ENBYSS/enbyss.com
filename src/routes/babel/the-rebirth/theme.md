@@ -1,7 +1,10 @@
 ---
 title: The Theme Engine - III
 description: My grand design that's probably overengineered!
-category: articles
+category: article
+series:
+    name: rebirth
+    part: 3
 image:
     src: 'rebirth/3.theme.webp'
     alt: 'The Theme Engine - III'

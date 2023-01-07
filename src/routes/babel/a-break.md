@@ -1,6 +1,7 @@
 ---
 title: A Break.
 description: I'm takin' a break, and I wanted to explain both why, and what to expect.
+category: announcement
 image:
     src: '/a-break.webp'
     alt: 'a break'

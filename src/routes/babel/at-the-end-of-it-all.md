@@ -1,9 +1,10 @@
 ---
 title: At the End of it All.
 description: A short story about the end of the world.
-category: stories # name of directory
-metaimage: 'at-the-end-of-it-all.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: story # name of directory
+image:
+  src: "at-the-end-of-it-all.png"
+  alt: "At the end of it all."
 createdAt: 2022-06-24
 updatedAt: 2022-06-24
 ---

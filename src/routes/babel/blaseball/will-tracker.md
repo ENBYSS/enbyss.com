@@ -1,6 +1,9 @@
 ---
 title: Will Tracker (X!)
 description: Tracks the will vote %es during a season. Also, my thoughts. (Decommissioned)
+category: doc
+tags:
+    - blaseball
 image:
     src: 'docs/blaseball/will-tracker.png'
     alt: 'Will Tracker'

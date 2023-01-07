@@ -1,13 +1,12 @@
 ---
 title: "Yakuza: Like A Brilliant Dragon"
 description: A Yakuza game that's not a brawler? I for one was disappointed. At least that is, before I actually played it.
-tags: ["yakuza", "rpg", "game"]
-showtoc: false
-category: reviews
-rating: 9.0
-ratingSummary: "This game nears absolute perfection, with its only problems being incredibly minor. Definitely an experience you shouldn't miss."
-metaimage: 'yakuza-like-a-dragon.jpg'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: review
+# rating: 9.0
+# ratingSummary: "This game nears absolute perfection, with its only problems being incredibly minor. Definitely an experience you shouldn't miss."
+image:
+    src: "yakuza-like-a-dragon.jpg"
+    alt: "yakuza like a dragon"
 createdAt: 2020-11-13
 updatedAt: 2020-11-13
 ---

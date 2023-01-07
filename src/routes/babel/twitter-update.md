@@ -1,6 +1,7 @@
 ---
 title: End Of Twitter
 description: Welp, the time has come.
+category: announcement
 image:
     src: '/twitter-bye.webp'
     alt: 'twitter-bye'

@@ -1,6 +1,9 @@
 ---
 title: Gift Progress (X)
 description: A tool I made to list the progress of certain gifts in the gift shop. (Decommissioned)
+category: doc
+tags:
+    - blaseball
 image:
     src: 'docs/blaseball/gift-progress.png'
     alt: 'Blaseball Gift Progress'

@@ -24,7 +24,7 @@ export const load = (async ({ fetch, params }) => {
     const series = ["all"].concat(posts.map(s => s.meta.series).filter(s => !!s).filter((v, i, a) => a.indexOf(v) === i) as string[]);
     const categories = ["all"].concat(posts.map(s => s.meta.category).filter(s => !!s).filter((v, i, a) => a.indexOf(v) === i) as string[]);
 
-    const active_category = params.category ?? 'all';
+    const active_category = 'all';
 
     return {
         active_category,

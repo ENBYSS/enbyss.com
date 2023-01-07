@@ -1,13 +1,12 @@
 ---
 title: "HADES deserves its reputation."
 description: A game about greek mythology that's also incomparable to other games tackling the same subject.
-tags: ["HADES", "rpg", "GOTY", "game"]
-showtoc: false
-category: reviews
-rating: 10
-ratingSummary: "An immensely strong story, compounded with a clever mechanic and highly rewarding gameplay make it shine way brighter than most."
-metaimage: 'hades.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: review
+# rating: 10
+# ratingSummary: "An immensely strong story, compounded with a clever mechanic and highly rewarding gameplay make it shine way brighter than most."
+image:
+    src: 'hades.png'
+    alt: 'hades'
 createdAt: 2021-01-08
 updatedAt: 2021-01-08
 ---

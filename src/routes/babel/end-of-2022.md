@@ -1,6 +1,7 @@
 ---
 title: The End of 2022
 description: A look back towards the past year, what happened, and how we'll move onward.
+category: article
 image:
     src: 'end-of-2022.png'
     alt: 'End of 2022'

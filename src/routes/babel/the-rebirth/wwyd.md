@@ -1,7 +1,10 @@
 ---
 title: What would you do... - II
 description: ...if you could do it all over again?
-category: articles
+category: article
+series:
+    name: rebirth
+    part: 2
 image:
     src: 'rebirth/2.wwyd.webp'
     alt: 'What would you do... - II'

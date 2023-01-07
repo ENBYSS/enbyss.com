@@ -1,6 +1,7 @@
 ---
 title: Mastodon - What is it?
 description: As explained by someone who's terrible at explaining things.
+category: article
 image:
     src: 'what-is-mastodon.webp'
     alt: 'What is Mastodon?'

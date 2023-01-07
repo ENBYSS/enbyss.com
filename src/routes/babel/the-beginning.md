@@ -1,11 +1,10 @@
 ---
 title: The Beginning.
 description: A rambling about how I created this whole thing.
-tags: ["tech", "tutorial-like", "blogging"]
-showtoc: true
-category: articles # name of directory
-metaimage: 'the-beginning.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: article # name of directory
+image:
+  src: "the-beginning.png"
+  alt: "the beginning"
 createdAt: 2020-11-12
 updatedAt: 2020-11-12
 ---

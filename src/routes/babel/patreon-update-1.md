@@ -1,10 +1,7 @@
 ---
 title: New Perk for Patrons!
 description: From now on, Patrons will get edited videos earlier!
-tags: ["life", "personal", "blogging", "patreon"]
-showtoc: false
-category: announcement # name of directory
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: announcement
 createdAt: 2021-12-28
 updatedAt: 2021-12-28
 ---

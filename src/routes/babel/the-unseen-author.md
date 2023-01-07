@@ -1,12 +1,12 @@
 ---
 title: The Unseen Author.
 description: We all live in books, our own that deviates from the truth. What follows is a chapter, and eventually - what happened.
-category: stories # name of directory
-metaimage: 'the-unseen-author.png'
-type: complete # complete, ongoing, group [should come with an attribute (partAmnt)]
+category: story
+image:
+    src: "the-unseen-author.png"
+    alt: "the unseen author"
 createdAt: 2022-07-01
 updatedAt: 2022-07-01
-unlisted: true
 ---
 
 **CW: Anxiety**
