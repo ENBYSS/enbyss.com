@@ -7,7 +7,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.output.DEPLOYMENT_MATRIX }}
+      DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.outputs.DEPLOYMENT_MATRIX }}
     steps:
       - name: Pull repository
         uses: actions/checkout@v3
@@ -43,6 +43,9 @@ jobs:
           echo "DEPLOYMENT_MATRIX<<${delimiter}" >> "${GITHUB_OUTPUT}"
           echo "$JSON" >> "${GITHUB_OUTPUT}"
           echo "${delimiter}" >> "${GITHUB_OUTPUT}"
+          
+          echo "$JSON"
+          echo "${GITHUB_OUTPUT}"
 
   prepare-release-on-servers:
     name: "${{ matrix.server.name }}: Prepare release"
