@@ -41,8 +41,8 @@ jobs:
           delimiter="$(openssl rand -hex 8)"
           JSON="$(cat ./.github/workflows/servers.json)"
           echo "DEPLOYMENT_MATRIX<<${delimiter}" >> "${GITHUB_OUTPUT}"
-          echo "$JSON" >> ${GITHUB_OUTPUT}
-          echo "${delimiter}" >> ${GITHUB_OUTPUT}
+          echo "$JSON" >> "${GITHUB_OUTPUT}"
+          echo "${delimiter}" >> "${GITHUB_OUTPUT}"
 
   prepare-release-on-servers:
     name: "${{ matrix.server.name }}: Prepare release"
