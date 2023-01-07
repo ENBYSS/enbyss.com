@@ -2,8 +2,6 @@
 title: Herring Reveals And Signs (X)
 description: A popular tool used to show Herring updates, be they freshly revealed messages or ones close to being revealed. (Decommissioned)
 category: doc
-tags:
-    - blaseball
 image:
     src: 'docs/blaseball/herring-reveals.png'
     alt: 'Herring Reveals'
