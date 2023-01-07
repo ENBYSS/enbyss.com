@@ -15,6 +15,7 @@
         "nebula": "light.webp",
         "the-star": "synthwave-bg.jpg",
         "nightlife": "synthwave-bg.jpg",
+        "citrivoid": "orange.png",
     } as any;
 
     export let data: PageData;
@@ -124,7 +125,14 @@
 
     .nightlife {
         #background {
-            filter: blur(15px) sepia(1.0) saturate(500%) hue-rotate(260deg) brightness(30%);
+            filter: blur(30px) sepia(1.0) saturate(500%) hue-rotate(260deg) brightness(30%);
+            transform: scale(1.1);
+        }
+    }
+
+    .citrivoid {
+        #background {
+            filter: blur(30px) sepia(1.0) saturate(500%) hue-rotate(-30deg) brightness(30%);
             transform: scale(1.1);
         }
     }

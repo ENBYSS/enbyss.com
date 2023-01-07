@@ -3,6 +3,7 @@
     import LinkBar from "./link-bar.svelte";
 	import Menu from "./menu.svelte";
 	import { theme } from "./stores";
+	import ThemeBar from "./theme-bar.svelte";
     import Ticker from "./ticker.svelte";
 
     let collapsed = true;
@@ -46,38 +47,16 @@
             </a>
         {/each}
 
+        <p class="subtitle-section"> Outer Links </p>
+
         <div class="box rounded-0 p-0 text-3xl overflow-hidden">
             <LinkBar />
         </div>
 
-        <div class="z-20 w-full flex flex-col items-center gap-2">
-            <Menu
-                label="Themes"
-                groups={[
-                    {
-                        name: "Themes",
-                        items: [
-                            {
-                                label: 'abyss',
-                                handler: () => theme.set("abyss"),
-                            },
-                            {
-                                label: 'nebula',
-                                handler: () => theme.set("nebula"),
-                            },
-                            {
-                                label: 'the star',
-                                handler: () => theme.set("the-star"),
-                            },
-                            {
-                                label: 'nightlife',
-                                handler: () => theme.set("nightlife"),
-                            }
-                        ]
-                    }
-                ]}
-                max_height="300px"
-            />
+        <p class="subtitle-section"> Themes </p>
+
+        <div class="theme-bar">
+            <ThemeBar />
         </div>
     </nav>
 </div>
@@ -94,6 +73,38 @@
             &:hover {
                 filter: hue-rotate(#{$i * 40 + 180}deg) invert(1);
             }
+        }
+    }
+
+    .subtitle-section {
+        text-align: center;
+        background: var(--saturated-col-1);
+        color: var(--saturated-col-3);
+        padding: .5em 0;
+        font-weight: 600;
+        margin: .5em;
+    }
+
+    .theme-bar {
+        margin: 0 auto;
+        max-width: 90%;
+        :global(div) {
+            border-radius: 0;
+            flex-wrap: wrap;
+            gap: .3em;
+        }
+        :global(.option-btn) {
+            padding: 0.5em 1.0em;
+            flex-grow: 1;
+            border-radius: .8em;
+
+            &:hover {
+                padding: 0.5em 1.0em;
+            }
+        }
+        :global(.option-btn.active) {
+            background: var(--pop-col-1);
+            color: var(--pop-col-3);
         }
     }
 </style>

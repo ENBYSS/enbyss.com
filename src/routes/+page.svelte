@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Head from "$lib/head.svelte";
 	import LinkBar from "$lib/link-bar.svelte";
+	import ThemeBar from "$lib/theme-bar.svelte";
 	import PageLink from "./page-link.svelte";
 
     const stream = undefined;
@@ -54,6 +55,8 @@
     <div class="box mx-auto p-0 rounded-3 flex text-3xl overflow-hidden w-25rem">
         <LinkBar />
     </div>
+
+    <ThemeBar/>
 
     <div class="box mx-auto max-w-700px flex flex-col gap-7">
         <div>
