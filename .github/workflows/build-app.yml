@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-app:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Pull repository
@@ -19,5 +19,14 @@ jobs:
       - name: Building site
         run: npm run build
 
-      - name: DEBUG
-        run: ls
+      - name: Prune dev dependencies
+        run: npm prune --production
+
+      - name: Upload production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: |
+            node_modules
+            package.json
+            build
