@@ -6,6 +6,8 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    outputs:
+      DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.output.DEPLOYMENT_MATRIX }}
     steps:
       - name: Pull repository
         uses: actions/checkout@v3
@@ -22,11 +24,43 @@ jobs:
       - name: Prune dev dependencies
         run: npm prune --production
 
+      - name: Prepare artifact
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: tar -czf "${GITHUB_SHA}".tar.gz node_modules package.json build
+
       - name: Upload production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist
-          path: |
-            node_modules
-            package.json
-            build
+          name: site-build
+          path: ${{ github.sha }}.tar.gz
+
+      - name: Export deployment matrix
+        id: export-deployment-matrix
+        run: |
+          delimiter="$(openssl rand -hex 8)"
+          JSON="$(cat ./.github/workflows/servers.json)"
+          echo "DEPLOYMENT_MATRIX<<${delimiter}" >> "${GITHUB_OUTPUT}"
+          echo "$JSON" >> ${GITHUB_OUTPUT}
+          echo "${delimiter}" >> ${GITHUB_OUTPUT}
+
+  prepare-release-on-servers:
+    name: "${{ matrix.server.name }}: Prepare release"
+    runs-on: ubuntu-latest
+    needs: setup
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.setup.outputs.DEPLOYMENT_MATRIX) }}
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: site-build
+      - name: Upload
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ matrix.server.ip }}
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ matrix.server.port }}
+          source: ${{ github.sha }}.tar.gz
+          target: ${{ matrix.server.path }}/artifacts
