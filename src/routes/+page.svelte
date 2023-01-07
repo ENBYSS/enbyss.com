@@ -47,7 +47,7 @@
     {:else}
         <div class="box mx-0">
             <a class="italic text-5xl hover:tracking-1 font-700 text-contrast opacity-70 hover:opacity-100" href="/live">
-                Not live...
+                Not live.
             </a>
         </div>
     {/if}
