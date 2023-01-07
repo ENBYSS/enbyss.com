@@ -2,7 +2,7 @@
     {
         "name": "enbyss-main-server",
         "ip": "49.12.76.246",
-        "username": "root",
+        "username": "github",
         "port": "22",
         "beforeHooks": "",
         "afterHooks": "",
