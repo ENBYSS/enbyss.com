@@ -6,6 +6,6 @@
         "port": "22",
         "beforeHooks": "",
         "afterHooks": "",
-        "path": "/ftp/enbyss.com"
+        "path": "/home/github/enbyss.com"
     }
 ]
