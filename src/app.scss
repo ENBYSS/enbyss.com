@@ -1,6 +1,7 @@
 @import "./fonts/Objectivity/objectivity.css";
 @import "./fonts/IBMPlexMono/ibm-plex-mono.css";
 @import "./fonts/CrimsonPro/crimson-pro.css";
+@import "./fonts/Fraunces/fraunces.css";
 
 * {
     margin: 0;
@@ -10,7 +11,7 @@
 // Root styling
 :root {
     // Fonts
-    --main-font: 'Objectivity';
+    --main-font: 'Fraunces';
     --un-prose-font-mono: 'IBM Plex Mono';
 
     // Overrides
