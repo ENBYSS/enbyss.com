@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Head from "$lib/head.svelte";
+	import { stores } from "$lib/stores/site-data";
 	import Title from "$lib/title.svelte";
 	import type { PageData } from "./$types";
 	import Entry from "./entry.svelte";
@@ -7,7 +8,14 @@
 
     export let data: PageData;
 
-    let sorted_schedule = data.schedule.map(s => ({ ...s, when: Date.parse(s.when) }));
+    let schedule = data.schedule;
+    stores?.schedule.set(schedule);
+    stores?.schedule.subscribe(s => {
+        console.log("NEW EVENT");
+        schedule = s;
+    });
+
+    $: sorted_schedule = schedule.map(s => ({ ...s, when: Date.parse(s.when) }));
 
     $: {
         const now = Date.now();

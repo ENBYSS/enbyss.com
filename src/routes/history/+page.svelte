@@ -5,6 +5,8 @@
     import autoAnimate from "@formkit/auto-animate";
 	import OptionBar from "$lib/option-bar.svelte";
 	import Head from "$lib/head.svelte";
+	import { stores } from "$lib/stores/site-data";
+	import type { WSStream, WSVideo } from "$lib/stores/websocket.type";
 
     export let data: PageData;
 
@@ -18,10 +20,30 @@
     let currentType = "all"
     let currentEdit = "all"
 
-    let filteredHistory = data.history.map(item => ({ ...item, edited: (item.videos.length > 0 ? 'edited' : 'unedited') as "edited" | "unedited"}));
+    let streams = data.streams;
+    let videos = data.videos;
+
+    stores?.stream.set(streams);
+    stores?.video.set(videos);
+
+    stores?.stream.subscribe(s => streams = s);
+    stores?.video.subscribe(v => videos = v);
+
+    const construct_history = (streams: WSStream[], videos: WSVideo[]) => streams.map(s => ({
+        ...s,
+        videos: videos.filter(v => v.from_stream.includes(s.id)),
+        tags: s.tags === "" ? [] : s.tags?.split(",") || [],
+    }));
+
+    let history = construct_history(streams, videos);
+    $: if (streams || videos) {
+        history = construct_history(streams, videos);
+    }
+
+    let filteredHistory = history.map(item => ({ ...item, edited: (item.videos.length > 0 ? 'edited' : 'unedited') as "edited" | "unedited"}));
 
     $: if(currentStatus || currentType || currentEdit) {
-        filteredHistory = data.history
+        filteredHistory = history
             .filter(item => currentStatus === "all" || item.status === currentStatus)
             .filter(item => currentType === "all" || item.type === currentType)
             .map(item => ({

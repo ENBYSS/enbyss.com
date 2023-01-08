@@ -52,7 +52,7 @@
         </div>
     {/if}
 
-    <div class="box mx-auto p-0 rounded-3 flex text-3xl overflow-hidden w-25rem">
+    <div class="box mx-auto p-0 rounded-3 flex text-3xl overflow-hidden max-w-full w-25rem">
         <LinkBar />
     </div>
 

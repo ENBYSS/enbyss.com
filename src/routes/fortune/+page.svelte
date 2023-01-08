@@ -5,6 +5,7 @@
     import autoAnimate from "@formkit/auto-animate";
 	import OptionBar from "$lib/option-bar.svelte";
 	import Head from "$lib/head.svelte";
+	import { stores } from "$lib/stores/site-data";
 
     export let data: PageData;
 
@@ -35,6 +36,8 @@
     }
 
     let fortunes = data.fortune;
+    stores?.considered.set(fortunes);
+    stores?.considered.subscribe(c => fortunes = c);
 
     $: if (filter) {
         fortunes = data.fortune
