@@ -136,7 +136,8 @@
     .item-image {
         :global(img) {
             height: 100%;
-            max-width: 120px;
+            max-width: 100px;
+            object-fit: cover;
         }
     }
 

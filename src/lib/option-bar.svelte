@@ -4,7 +4,7 @@
     export let picked: string = initial;
 </script>
 
-<div class="flex rounded-2 overflow-hidden">
+<div class="option-btn-container">
     {#each options as option}
         <button on:click={() => picked = option} class="option-btn" class:active={picked === option}>
             {option}
@@ -13,6 +13,12 @@
 </div>
 
 <style lang="scss">
+    .option-btn-container {
+        display: flex;
+        border-radius: .5em;
+        overflow: hidden;
+    }
+
     .option-btn {
         padding: 1em 2em;
         background: var(--base-col-1);
@@ -31,6 +37,25 @@
             padding: 1em 3em;
             background: var(--saturated-col-1);
             color: var(--saturated-col-3);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .option-btn-container {
+            gap: .5em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .option-btn {
+            padding: .5em 1em;
+            border-radius: .4em;
+
+            &:not(.active):hover {
+                padding: .5em 1em;
+                background: var(--saturated-col-1);
+                color: var(--saturated-col-3);
+            }
         }
     }
 </style>

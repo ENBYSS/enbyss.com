@@ -69,7 +69,7 @@
         display: flex;
         justify-content: flex-start;
         flex-grow: 1;
-        gap: 2em;
+        gap: 1em;
         padding: 0;
         border-radius: .5em;
         overflow: hidden;
@@ -83,6 +83,8 @@
 
         :global(img) {
             height: 100%;
+            max-width: 100px;
+            object-fit: cover;
         }
 
         .post-category {
