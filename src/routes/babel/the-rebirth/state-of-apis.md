@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 5
 image:
-    src: 'rebirth/5.stateofapis.webp'
+    src: 'the-rebirth.png'
     alt: 'State of APIs - V'
 createdAt: 2022-08-29
 updatedAt: 2022-08-29

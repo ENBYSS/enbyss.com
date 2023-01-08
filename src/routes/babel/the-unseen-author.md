@@ -3,7 +3,7 @@ title: The Unseen Author.
 description: We all live in books, our own that deviates from the truth. What follows is a chapter, and eventually - what happened.
 category: story
 image:
-    src: "the-unseen-author.png"
+    src: "generic.png"
     alt: "the unseen author"
 createdAt: 2022-07-01
 updatedAt: 2022-07-01

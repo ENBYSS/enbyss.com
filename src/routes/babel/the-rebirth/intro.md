@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 1
 image:
-    src: 'rebirth/1.intro.webp'
+    src: 'the-rebirth.png'
     alt: 'The Rebirth - I'
 createdAt: 2022-08-20
 updatedAt: 2022-08-20

@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 3
 image:
-    src: 'rebirth/3.theme.webp'
+    src: 'the-rebirth.png'
     alt: 'The Theme Engine - III'
 createdAt: 2022-08-25
 updatedAt: 2022-08-25

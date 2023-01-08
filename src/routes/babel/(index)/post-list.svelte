@@ -3,7 +3,7 @@
     import autoAnimate from "@formkit/auto-animate";
 	import type { Post } from "./+layout";
 
-    const get_img = (path: string) => `https://files.enbyss.com/images/content/${path}`;
+    const get_img = (path: string) => `https://files.enbyss.com/images/babel/${path}`;
     const format_date = (date: string) => new Date(date).toLocaleDateString('en', {
         year: "numeric",
         month: "short",
@@ -83,7 +83,7 @@
 
         :global(img) {
             height: 100%;
-            max-width: 100px;
+            max-width: 120px;
             object-fit: cover;
         }
 
@@ -91,10 +91,11 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            background: var(--saturated-col-3);
-            color: var(--saturated-col-1);
-            padding: .4em .8em;
+            background: var(--saturated-col-1);
+            color: var(--saturated-col-3);
+            padding: .3em .6em;
             border-top-right-radius: .8em;
+            font-size: .8em;
         }
     }
 
@@ -110,7 +111,7 @@
         }
 
         .description {
-            color: var(--pop-col-1);
+            color: var(--saturated-col-2);
             font-weight: 500;
             font-size: 1em;
             font-style: italic;

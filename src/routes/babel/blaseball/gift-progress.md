@@ -5,7 +5,7 @@ category: doc
 tags:
     - blaseball
 image:
-    src: 'docs/blaseball/gift-progress.png'
+    src: 'blaseball.png'
     alt: 'Blaseball Gift Progress'
 createdAt: 2022-12-07
 updatedAt: 2022-12-07

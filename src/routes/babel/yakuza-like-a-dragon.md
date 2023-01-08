@@ -5,7 +5,7 @@ category: review
 # rating: 9.0
 # ratingSummary: "This game nears absolute perfection, with its only problems being incredibly minor. Definitely an experience you shouldn't miss."
 image:
-    src: "yakuza-like-a-dragon.jpg"
+    src: "generic.png"
     alt: "yakuza like a dragon"
 createdAt: 2020-11-13
 updatedAt: 2020-11-13

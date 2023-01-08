@@ -4,7 +4,7 @@ description: A lost soul, and the world that spoke. A narrative poem of sorts.
 category: story
 metaimage: 'speaking-world.png'
 image:
-    src: "speaking-world.png"
+    src: "generic.png"
     alt: "speaking world"
 createdAt: 2022-06-27
 updatedAt: 2022-06-27

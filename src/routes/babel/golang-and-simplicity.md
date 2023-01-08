@@ -3,7 +3,7 @@ title: Golang and Simplicity
 description: A come-around from someone who used to hate Go.
 category: article
 image:
-    src: 'golang-and-simplicity.webp'
+    src: 'golang.png'
     alt: 'Revisiting Golang'
 createdAt: 2022-08-30
 updatedAt: 2022-09-22

@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 2
 image:
-    src: 'rebirth/2.wwyd.webp'
+    src: 'the-rebirth.png'
     alt: 'What would you do... - II'
 createdAt: 2022-08-23
 updatedAt: 2022-08-23

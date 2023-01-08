@@ -3,7 +3,7 @@ title: At the End of it All.
 description: A short story about the end of the world.
 category: story # name of directory
 image:
-  src: "at-the-end-of-it-all.png"
+  src: "generic.png"
   alt: "At the end of it all."
 createdAt: 2022-06-24
 updatedAt: 2022-06-24

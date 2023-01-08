@@ -3,7 +3,7 @@ title: End Of Twitter
 description: Welp, the time has come.
 category: announcement
 image:
-    src: '/twitter-bye.webp'
+    src: 'twitter.png'
     alt: 'twitter-bye'
 createdAt: 2022-11-18
 updatedAt: 2022-11-20

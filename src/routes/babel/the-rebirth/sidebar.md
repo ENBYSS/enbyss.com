@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 4
 image:
-    src: 'rebirth/4.sidebar.webp'
+    src: 'the-rebirth.png'
     alt: 'Sidebar vs. Header - IV'
 createdAt: 2022-08-28
 updatedAt: 2022-08-28

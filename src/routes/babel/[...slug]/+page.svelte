@@ -23,11 +23,11 @@
 </Head>
 
 <article class="box shadow-2xl rounded-sm mx-auto max-w-65ch flex flex-col items-center py-8 mb-16 h-entry">
-    {#if metadata.image}
+    {#if metadata.image && metadata.image.src && metadata.image.src !== 'generic.png'}
         <div class="mb-8 rounded-3 overflow-hidden">
             <IpxImage 
                 css="w-full h-full"
-                src={`https://files.enbyss.com/images/content/${metadata.image.src}`} 
+                src={`https://files.enbyss.com/images/babel/${metadata.image.src}`} 
                 alt={metadata.image.alt}
                 ipx={{
                     format: "webp",

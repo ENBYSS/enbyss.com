@@ -3,7 +3,7 @@ title: A Break.
 description: I'm takin' a break, and I wanted to explain both why, and what to expect.
 category: announcement
 image:
-    src: '/a-break.webp'
+    src: 'announcement.png'
     alt: 'a break'
 createdAt: 2022-09-25
 updatedAt: 2022-09-25

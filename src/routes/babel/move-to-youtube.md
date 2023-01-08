@@ -2,6 +2,9 @@
 title: Moving to Youtube.
 description: I decided to move to Youtube. Here's why.
 category: announcement
+image:
+  src: announcement.png
+  alt: moving to youtube
 createdAt: 2021-09-12
 updatedAt: 2021-09-12
 ---

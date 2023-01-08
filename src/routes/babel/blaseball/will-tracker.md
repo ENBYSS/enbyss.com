@@ -5,7 +5,7 @@ category: doc
 tags:
     - blaseball
 image:
-    src: 'docs/blaseball/will-tracker.png'
+    src: 'blaseball.png'
     alt: 'Will Tracker'
 createdAt: 2022-12-23
 updatedAt: 2022-12-23

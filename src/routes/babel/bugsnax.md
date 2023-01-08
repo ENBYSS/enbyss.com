@@ -5,7 +5,7 @@ category: review
 #rating: 6
 #ratingSummary: "While I understand its appeal, and adore the design of the world and its bugsnax, the characters annoyed me and some puzzles left me exasperated."
 image:
-  src: "bugsnax.png"
+  src: "generic.png"
   alt: "bugsnax"
 createdAt: 2021-01-21
 updatedAt: 2021-01-21
