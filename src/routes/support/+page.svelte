@@ -1,10 +1,34 @@
 <script lang="ts">
 	import Head from "$lib/head.svelte";
+	import { stores } from "$lib/stores/site-data";
 	import { fix_and_outro_and_destroy_block } from "svelte/internal";
 	import type { PageData } from "./$types";
 	import Metric from "./metric.svelte";
 
     export let data: PageData;
+
+    let youtube = data.youtube;
+    let patreon = data.patreon;
+    let tips = data.tips;
+
+    stores?.youtube.set(youtube);
+    stores?.patreon.set(patreon);
+    stores?.tip.set(tips);
+
+    stores?.youtube.subscribe(y => youtube = y);
+    stores?.patreon.subscribe(p => patreon = p);
+    stores?.tip.subscribe(t => tips = t);
+
+    let youtube_cache = new Date().toString();
+    let patreon_cache = new Date().toString();
+
+    $: if (youtube) {
+        youtube_cache = new Date().toString();
+    }
+
+    $: if (patreon) {
+        patreon_cache = new Date().toString();
+    }
 
     const currency_map = {
         USD: '$',
@@ -32,19 +56,19 @@
     <div class="flex flex-wrap w-screen justify-center gap-5">
         <Metric
             label="main"
-            value={data.youtube.stats.main.subs}
+            value={youtube.stats.main.subs}
             bgColor="var(--youtube)"
             goal="1000"
             link="/main"
-            cache_date={new Date().toString()}
+            cache_date={youtube_cache}
         />
         <Metric
             label="patreon"
-            value={`$${(data.patreon.members.reduce((a, b) => a + b.pledge_amount, 0) * .89)/100}`}
+            value={`$${(patreon.members.reduce((a, b) => a + b.pledge_amount, 0) * .89)/100}`}
             bgColor="var(--patreon)"
             goal="$50.00"
             link="/patreon"
-            cache_date={new Date().toString()}
+            cache_date={patreon_cache}
         />
     </div>
 
@@ -53,10 +77,10 @@
             <a class="italic font-700" href="/patreon">Patrons</a> of the Void
         </h1>
 
-        {#each [...data.patreon.tiers].sort((a, b) => a.attributes.amount_cents ? -1 : 1) as tier}
+        {#each [...patreon.tiers].sort((a, b) => a.attributes.amount_cents ? -1 : 1) as tier}
             <div>
                 <h2 class="text-7 font-600 italic text-base-col-2"> {tier.attributes.title} </h2>
-                {#each data.patreon.members.filter(m => m.pledge_amount === tier.attributes.amount_cents) as member}
+                {#each patreon.members.filter(m => m.pledge_amount === tier.attributes.amount_cents) as member}
                     <span class="cursor-default px-3 py-1 rounded-3 text-3.8 hover:bg-base-col-3 hover:hue-rotate-180 hover:invert">
                         {member.name}
                     </span>
@@ -71,7 +95,7 @@
         </h1>
 
         <div class="flex flex-wrap justify-center gap-8">
-            {#each data.tips as tip}
+            {#each tips as tip}
                 <div class="hover:hue-rotate-40 hover:scale-110 hover:cursor-default max-w-80 text-left">
                     <span class="font-700 text-5 text-pop-col-1"> {tip.from} </span>
                     <span class="font-600 text-3 italic text-base-col-2"> {currency_map[tip.currency]} </span>
