@@ -50,6 +50,7 @@
 		"rehype-katex": "^6.0.2",
 		"rehype-slug": "^5.1.0",
 		"remark-math": "^3.0.0",
-		"shiki": "^0.12.1"
+		"shiki": "^0.12.1",
+		"socket.io-client": "^4.5.4"
 	}
 }
