@@ -14,6 +14,7 @@ updatedAt: 2022-08-29
 
 <script>
     import Note from "$lib/babel/note.svelte";
+    import Navigate from "$lib/babel/navigate.svelte";
 </script>
 
 Last time, I went on about the theme switcher, and I showed a bunch of code.
@@ -341,10 +342,6 @@ Oh yeah. This was just part 1. I hope you're ready for things to get more compli
 
 I've overhauled a lot of things about the site, so I'm stopping here. Mostly because it'll be out of date, and I kinda lost interest in continuing to document like this. However, I'll probably explain
 other things that I've been working on, involving the huge update to the site.
-
-<script>
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
 
 <Navigate
     prev={{

@@ -14,6 +14,7 @@ updatedAt: 2022-08-20
 
 <script>
     import Note from "$lib/babel/note.svelte";
+    import Navigate from "$lib/babel/navigate.svelte";
 </script>
 
 Hey! Been a while since I wrote something. You might be noticing that things are a bit outta whack. That's normal. I've rebuilt my whole entire site afterall.
@@ -183,10 +184,6 @@ I had two options.
 And so, I created a new branch - called _recreation/nuxt3_ - and started.
 
 <!-- Add page navigation -->
-<script>
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 <Navigate
     next={{
         link: "/babel/the-rebirth/wwyd",

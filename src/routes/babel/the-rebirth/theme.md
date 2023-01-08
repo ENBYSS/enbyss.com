@@ -14,6 +14,7 @@ updatedAt: 2022-08-25
 
 <script>
     import Note from "$lib/babel/note.svelte";
+    import Navigate from "$lib/babel/navigate.svelte";
 </script>
 
 I always wanted to have theming on my site.
@@ -303,10 +304,6 @@ There's no header after all - I want a user to be able to configure the theme fr
 Plus hey, I need a place for all the header stuff - like links or whatever.
 
 Say hello to the **Sidebar.**
-
-<script>
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
 
 <Navigate
     prev={{
