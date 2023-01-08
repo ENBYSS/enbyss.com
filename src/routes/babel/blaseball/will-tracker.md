@@ -11,6 +11,11 @@ createdAt: 2022-12-23
 updatedAt: 2022-12-23
 ---
 
+<script>
+    import Note from "$lib/babel/note.svelte";
+    import ContentImg from "$lib/babel/content-img.svelte";
+</script>
+
 # ! Disclaimer !
 Hey! This won't be like the other two. [Gift Tracker](/babel/docs/blaseball/gift-progress) was a look into a simple tool, and [Herring Reveals](/babel/docs/blaseball/herring) was a significantly more complicated look. As the final entry of the Expansion Era Documentation series, this escalates things by being a tool that *I had to delist*.
 
@@ -27,13 +32,11 @@ So, just incase you're the first kind - I'll elaborate. **Wills were very contro
 
 So, first lets consider the state of the election for the first *many* seasons. You had **two** things - **Decrees** and **Blessings**. Decrees worked democratically - whichever got the most votes, wins. Blessings worked on *luck* - each vote was effectively a lottery ticket, and the more votes you had, the more likely you were to win. Because of this, there was something known as *Wimdying* - wherein someone with incredibly low votes somehow won the will.
 
-::image
----
-img: blaseball/dale-wimdy.jpg
-alt: A tweet showing the origin of "Wimdy" due to the Miami Dale winning a blessing with 0% votes.
-caption: God I love the Miami Dale.
----
-::
+<ContentImg
+    src="blaseball/dale-wimdy.jpg"
+    alt="A tweet showing the origin of 'Wimdy' due to the Miami Dale winning a blessing with 0% votes."
+    caption="God I love the Miami Dale."
+/>
 
 Introduce **Wills** - which appeared as the *third* option. The selection of wills was the same for each team, but unlike Blessings and Decrees, each team was **guaranteed** to win at least 2 of them. They *also* worked on raffle however, so the element of randomness was still there. However, this ended up causing a lot of problems.
 
@@ -110,9 +113,11 @@ if (this.dataMode === "After Day 99") {
 
 Here you can see two steps - we move forward *four* days, then we set the hour to **20**. Since games start on **Monday**, adding 4 days moves us to **Friday** - and **Friday 20:00UTC** was about the time when Day 99 ended.
 
-::note
+<Note>
+
 Firstly, forgive the code looking wonky. Like I said, this was way back when, and my skills were still not... honed. Secondly, `time` is a UNIX timestamp in milliseconds, measuring time since **January 1st, 1970 UTC**. So to skip four days, you need to turn four days into milliseconds - aka, turn it into hours ($\times24$), then minutes ($\times60$), seconds ($\times60$), and finally milliseconds ($\times1000$).
-::
+
+</Note>
 
 ```js
 else if(this.dataMode === "Final Day") {
@@ -332,10 +337,8 @@ All it was meant to be, is a visualization of past data to analyze certain event
 
 I hope this was a good read! I've been meaning to talk about this thing, since I **am** proud of it and many people really enjoyed it - and I never really got a chance to air out my thoughts about accidentally encountering the Frankienstein Effect.
 
-::image
----
-img: blaseball/dog.webp
-alt: dog
-caption: ...and also, look at this dog.
----
-::
+<ContentImg
+    src="blaseball/dog.webp"
+    alt="a dog"
+    caption="woof"
+/>

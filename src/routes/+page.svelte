@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Head from "$lib/head.svelte";
+import Head from "$lib/head.svelte";
 	import LinkBar from "$lib/link-bar.svelte";
 	import ThemeBar from "$lib/theme-bar.svelte";
 	import PageLink from "./page-link.svelte";

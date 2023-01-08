@@ -12,6 +12,10 @@ createdAt: 2022-08-29
 updatedAt: 2022-08-29
 ---
 
+<script>
+    import Note from "$lib/babel/note.svelte";
+</script>
+
 Last time, I went on about the theme switcher, and I showed a bunch of code.
 
 ```ts
@@ -266,7 +270,8 @@ const themes = useThemes();
 
 You just import it, and then everything that's being exported in the store can be accessed directly.
 
-::note
+<Note>
+
 Something to keep in mind - if you want to _deconstruct_ the store, you'll need to use `storeToRefs`.
 
 ```vue
@@ -281,7 +286,8 @@ const { setTheme } = themes;
 ```
 
 What the function does is _keep_ all the reactive values... reactive. Since the function _isn't reactive_, it's just a function, we can just access it directly. If you _forget_ to use `storeToRefs`, all values you get will _stop being reactive_, kind of ruining the purpose of using a state.
-::
+
+</Note>
 
 ### So... themes?
 
@@ -331,11 +337,23 @@ export const initThemes = () => {
 
 Oh yeah. This was just part 1. I hope you're ready for things to get more complicated.
 
-::page-nav
----
-prevLink: "/babel/articles/series/the-rebirth/sidebar"
-prevLabel: "Sidebar"
-nextLink: ""
-nextLabel: "State of APIs, Part 2"
----
-::
+### Update
+
+I've overhauled a lot of things about the site, so I'm stopping here. Mostly because it'll be out of date, and I kinda lost interest in continuing to document like this. However, I'll probably explain
+other things that I've been working on, involving the huge update to the site.
+
+<script>
+    import Navigate from "$lib/babel/navigate.svelte";
+</script>
+
+<Navigate
+    prev={{
+        link: "/babel/the-rebirth/sidebar",
+        name: "Sidebar",
+    }}
+    next={{
+        link: "/babel/the-rebirth/sidebar-2",
+        disabled: true,
+        name: "State of APIs, Part 2",
+    }}
+/>

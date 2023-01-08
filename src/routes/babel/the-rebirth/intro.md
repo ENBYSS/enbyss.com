@@ -12,6 +12,10 @@ createdAt: 2022-08-20
 updatedAt: 2022-08-20
 ---
 
+<script>
+    import Note from "$lib/babel/note.svelte";
+</script>
+
 Hey! Been a while since I wrote something. You might be noticing that things are a bit outta whack. That's normal. I've rebuilt my whole entire site afterall.
 
 _Why'd I do that?_ Welp, that's what we're getting into. But that's not the only thing. I want to get into how I did it, and explain that too for the technical people who are curious. Although, I do want to say that I'm no professional web developer.
@@ -102,9 +106,11 @@ Both of these implement the _new functionality_ without breaking _old code_. Som
 
 And these can add up.
 
-::note
+<Note>
+
 `*args` means _any number of parameters_. It gets treated as a list, but you can just pass them as normal parameters.
-::
+
+</Note>
 
 ### Major Release
 
@@ -114,7 +120,8 @@ And that's what **Nuxt 3** is. A massive upgrade. Mind you, it's not _fully read
 
 So I wanted to use it. A lot. It had some pretty interesting features and I wanted to play with them. Especially the upgrade to _Vue 3_, which introduced a different way of writing logic for components. Also - _native typescript support_. I'll never not champion the values of static typing.
 
-::note
+<Note>
+
 Static typing is when the type of each variable is known at compile time. Compare JavaScript to TypeScript for example...
 
 ```js
@@ -132,7 +139,8 @@ y(x)
 ```
 
 You don't need to declare all types, some infact are _inferred_, but this means your code is significantly less likely to produce confusing bugs due to changing types.
-::
+
+</Note>
 
 Just one problem - major upgrades mean major refactors. That's where _Nuxt Bridge_ comes in.
 
@@ -175,9 +183,13 @@ I had two options.
 And so, I created a new branch - called _recreation/nuxt3_ - and started.
 
 <!-- Add page navigation -->
-::page-nav
----
-nextLink: "/babel/articles/series/the-rebirth/wwyd"
-nextLabel: "What would you do..."
----
-::
+<script>
+    import Navigate from "$lib/babel/navigate.svelte";
+</script>
+
+<Navigate
+    next={{
+        link: "/babel/the-rebirth/wwyd",
+        name: "What would you do...",
+    }}
+/>

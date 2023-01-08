@@ -12,6 +12,10 @@ createdAt: 2022-08-25
 updatedAt: 2022-08-25
 ---
 
+<script>
+    import Note from "$lib/babel/note.svelte";
+</script>
+
 I always wanted to have theming on my site.
 
 From the moment I started 2 years ago, I knew I wanted to have a dark theme and a light theme. So, I looked into it and - in my inexperience - I bodged something together. The main concept was this...
@@ -177,11 +181,13 @@ The variables **aren't in scope.** And infact, when I tried to make this work...
 
 This wasn't the only issue however. Remember `--faded-opacity`? For each colour, I wanted to have a low opacity version. However, duplicating these values for each colour in the theme felt ugly. Not only that, but I wanted to start using `hsl` instead - due to it allowing for easier colour selection.
 
-::note
+<Note>
+
 `hsl` stands for _Hue, Saturation, Luminance_. The reason why this is preferred is because, if you want red for example, you just set Hue to **0**. Then, if you want to make it brighter, or decrease saturation, you can adjust the other 2 values while _keeping it red._ Using `rgb` or `hex` codes, this would be harder since you'd need to keep the ratios in mind. <br/><br/>
 
 For example, how do I darken #482FA0 _while_ keeping the hue and saturation? Hard right? 
-::
+
+</Note>
 
 As a result, I setup variables to work like this instead.
 
@@ -282,9 +288,11 @@ Things will, 95% of the time, _break_. They will also not do anything, do someth
 
 It's great, comes with unstyled components that perform certain functionality automatically. Unstyled is key, because it means I can add whatever padding, colours, or something in that I want. The _one_ styling it does take off your hands however is _positioning._ Well, it doesn't directly, but the documentation gives you CSS for the dropdown that you can use - so instead of thinking you can just copy and paste it. It's _Tailwind CSS_ too, so no need for funky classes or `style`.
 
-::note
+<Note>
+
 One day I should probably actually look into how dropdowns work. I looked at a video but forgot all of it so, you know. Probably need to watch it again. Oh, and [here's the video](https://youtu.be/IF6k0uZuypA). Or is it [this one?](https://youtu.be/GtL1huin9EE) I love Zero Escape, welcome to my death game - better pick the right one buddy.
-::
+
+</Note>
 
 I won't go into dropdowns, because I didn't really code the logic and it's a pretty small thing - however I did put some effort into it, so maybe I'll do a little highlights update after this series is done. Maybe. If you're interested. You specifically.
 
@@ -296,11 +304,17 @@ Plus hey, I need a place for all the header stuff - like links or whatever.
 
 Say hello to the **Sidebar.**
 
-::page-nav
----
-prevLink: "/babel/articles/series/the-rebirth/wwyd"
-prevLabel: "What would you do..."
-nextLink: "/babel/articles/series/the-rebirth/sidebar"
-nextLabel: "Sidebar"
----
-::
+<script>
+    import Navigate from "$lib/babel/navigate.svelte";
+</script>
+
+<Navigate
+    prev={{
+        link: "/babel/the-rebirth/wwyd",
+        name: "What would you do?",
+    }}
+    next={{
+        link: "/babel/the-rebirth/sidebar",
+        name: "Sidebar",
+    }}
+/>

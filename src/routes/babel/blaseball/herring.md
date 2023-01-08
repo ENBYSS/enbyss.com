@@ -9,6 +9,10 @@ createdAt: 2022-12-21
 updatedAt: 2022-12-21
 ---
 
+<script>
+    import Note from "$lib/babel/note.svelte";
+</script>
+
 I didn't expect this tool to get as popular as it did, but at the same time I likely should have. Effectively it served as a user interface for people who wanted to be *in the know* for new events that have occurred.
 
 # The Herring Mechanic
@@ -37,11 +41,13 @@ See, whenever a feed event that represented an *investigation result* was **upnu
 
 The result was that everyone had a limited supply of Red Herring based on how many investigation events they could upnut, and then they spent said Herring on the redacted events with the most potential in order to *not* waste them. There was quite a lot of co-ordination for this infact, including analyzing the redactions themselves and *guessing* what they could be hiding.
 
-::note
+<Note>
+
 Red Herring came from **Blaseball 2** - a nebulous *"sequel"* which hosted a gate. Said gate broke because we slammed dummy thick players into it and, upon opening, unleashed a torrent of red herring.
 
 How did we do that? Uh... [here you go](https://www.blaseball.wiki/w/Blaseball_2) - this should help I think.
-::
+
+</Note>
 
 # The Actual Documentation
 So, with all this unredacting going on, it'd be nice to see all the newly revealed events *and* the ones that are close, so people can upnut and contribute to the last push. Let me introduce, the *Herring Revealer*!
@@ -182,11 +188,13 @@ https://api.sibr.dev/eventually/events?
     sortorder=desc                              (in descending order [most first])
 ```
 
-::note
+<Note>
+
 `%7B` and `%7D` above are *url-encoded* versions of `{` and `}`. In other words, the actual value of `sortby` is `{metadata,scales}` - however since you can't use `{}` in URLs, they need to be encoded.
 
 Documentation of *eventually's* API can be found [here](https://docs.sibr.dev/docs/apis/b3A6MTcxMzQxMTA-events)
-::
+
+</Note>
 
 The resulting data from that API request is a list of events, of which we use the following fields:
 ```ts
@@ -382,7 +390,8 @@ But we're not done. Now come the reveals, and these have a lot more cosmetic pol
 </template>
 ```
 
-::note
+<Note>
+
 Don't be alarmed - you don't need to understand this code. The important part is this:
 
 ```vue
@@ -392,7 +401,8 @@ Don't be alarmed - you don't need to understand this code. The important part is
 ```
 
 ...which is the loop we're getting the data from. Everything else is just us using said data to construct some **HTML**.
-::
+
+</Note>
 
 **So!** Here we're extracting the events from `upnutsToDisplay` - which is a more processed version of `upnuts` - the variable holding the actual data - and that data is retrieved using the following function:
 

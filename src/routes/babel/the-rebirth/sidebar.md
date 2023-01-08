@@ -149,12 +149,17 @@ This is how I'm getting `isMobile`, and where `windowData` came from. This same 
 
 Welcome to _state management_. But not just that - next time, _we'll be going into using APIs_.
 
+<script>
+    import Navigate from "$lib/babel/navigate.svelte";
+</script>
 
-::page-nav
----
-prevLink: "/babel/articles/series/the-rebirth/theme"
-prevLabel: "The Theme Engine"
-nextLink: "/babel/articles/series/the-rebirth/state-of-apis"
-nextLabel: "State of APIs"
----
-::
+<Navigate
+    prev={{
+        link: "/babel/the-rebirth/theme",
+        name: "The Theme Engine",
+    }}
+    next={{
+        link: "/babel/the-rebirth/state-of-apis",
+        name: "State of APIs",
+    }}
+/>
