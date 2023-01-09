@@ -12,6 +12,7 @@ export const setup_youtube_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -24,6 +25,7 @@ export const setup_patreon_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -36,6 +38,7 @@ export const setup_tip_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -48,6 +51,7 @@ export const setup_stream_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -60,6 +64,7 @@ export const setup_video_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -72,6 +77,7 @@ export const setup_schedule_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -84,6 +90,7 @@ export const setup_ticker_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -96,6 +103,7 @@ export const setup_considered_data = () => {
     });
 
     return {
+        set,
         subscribe,
     }
 }
@@ -139,6 +147,7 @@ export const setup_chat_data = () => {
     });
 
     return {
+        set,
         subscribe
     }
 }
@@ -155,7 +164,7 @@ type Stores = {
     chat: ReturnType<typeof setup_chat_data>,
 }
 
-let stores: Stores | undefined = undefined;
+export let stores: Stores | undefined = undefined;
 
 if (browser && !stores) {
     stores = {

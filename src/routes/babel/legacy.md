@@ -3,7 +3,7 @@ title: Legacy
 description: A personal rambling about legacies and the stories we leave behind.
 category: article
 image:
-    src: "legacy.png"
+    src: "generic.png"
     alt: "legacy"
 createdAt: 2022-04-10
 updatedAt: 2022-04-10

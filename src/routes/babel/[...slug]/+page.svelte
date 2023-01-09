@@ -22,12 +22,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 </Head>
 
-<article class="box shadow-2xl rounded-sm mx-auto max-w-65ch flex flex-col items-center py-8 mb-16 h-entry">
-    {#if metadata.image}
+<article class="box shadow-2xl rounded-3 mx-auto max-w-80ch flex flex-col items-center py-8 mb-16 h-entry overflow-hidden">
+    {#if metadata.image && metadata.image.src && metadata.image.src !== 'generic.png'}
         <div class="mb-8 rounded-3 overflow-hidden">
             <IpxImage 
                 css="w-full h-full"
-                src={`https://files.enbyss.com/images/content/${metadata.image.src}`} 
+                src={`https://files.enbyss.com/images/babel/${metadata.image.src}`} 
                 alt={metadata.image.alt}
                 ipx={{
                     format: "webp",
@@ -94,6 +94,10 @@
         --shiki-token-link:                 hsl(20, 100%, 0%);            /* No idea what this is assigned to. */
 
         --un-prose-code: var(--text-base-col-2);
+    }
+
+    :global(.prose) {
+        max-width: 80ch !important;
     }
 
     :global(.prose :is(h1, h2, h3, h4, h5, h6, b, strong)) {

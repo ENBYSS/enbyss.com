@@ -6,7 +6,7 @@ series:
     name: rebirth
     part: 2
 image:
-    src: 'rebirth/2.wwyd.webp'
+    src: 'the-rebirth.png'
     alt: 'What would you do... - II'
 createdAt: 2022-08-23
 updatedAt: 2022-08-23
@@ -176,11 +176,13 @@ This was the first thing I did before anything else. I started working on making
 
 And so, the _Theme Engine_ was born.
 
-::page-nav
----
-prevLink: "/babel/articles/series/the-rebirth/intro"
-prevLabel: "The Rebirth"
-nextLink: "/babel/articles/series/the-rebirth/theme"
-nextLabel: "The Theme Engine"
----
-::
+<Navigate
+    prev={{
+        link: "/babel/the-rebirth/intro",
+        name: "The Rebirth",
+    }}
+    next={{
+        link: "/babel/the-rebirth/theme",
+        name: "The Theme Engine",
+    }}
+/>

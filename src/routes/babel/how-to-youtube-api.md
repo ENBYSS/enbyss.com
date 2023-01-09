@@ -3,7 +3,7 @@ title: Using The Youtube API.
 description: It was such a contrived experience that I made this as a note for future me.
 category: article
 image:
-  src: "how-to-youtube-api.png"
+  src: "generic.png"
   alt: "how to use the youtube api"
 createdAt: 2021-09-12
 updatedAt: 2021-09-14

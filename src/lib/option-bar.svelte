@@ -20,7 +20,7 @@
     }
 
     .option-btn {
-        padding: 1em 2em;
+        padding: .75em 1.5em;
         background: var(--base-col-1);
         color: var(--base-col-3);
         cursor: pointer;
@@ -34,13 +34,13 @@
         }
 
         &:not(.active):hover {
-            padding: 1em 3em;
+            padding: .75em 2em;
             background: var(--saturated-col-1);
             color: var(--saturated-col-3);
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
         .option-btn-container {
             gap: .5em;
             flex-wrap: wrap;

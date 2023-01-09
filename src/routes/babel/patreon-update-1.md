@@ -2,6 +2,9 @@
 title: New Perk for Patrons!
 description: From now on, Patrons will get edited videos earlier!
 category: announcement
+image:
+    src: announcement.png
+    alt: new perk for patrons
 createdAt: 2021-12-28
 updatedAt: 2021-12-28
 ---

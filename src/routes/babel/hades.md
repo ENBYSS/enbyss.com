@@ -5,7 +5,7 @@ category: review
 # rating: 10
 # ratingSummary: "An immensely strong story, compounded with a clever mechanic and highly rewarding gameplay make it shine way brighter than most."
 image:
-    src: 'hades.png'
+    src: 'generic.png'
     alt: 'hades'
 createdAt: 2021-01-08
 updatedAt: 2021-01-08

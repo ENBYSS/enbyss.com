@@ -3,7 +3,7 @@ title: Scraping vs. The Youtube API.
 description: Who needs the Youtube API when you have scraping?
 category: article
 image:
-  src: 'fuck-the-api.png'
+  src: 'generic.png'
   alt: 'scraping vs. the youtube api'
 createdAt: 2021-09-14
 updatedAt: 2021-09-14

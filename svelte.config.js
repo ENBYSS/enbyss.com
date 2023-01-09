@@ -6,21 +6,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import shiki from "shiki";
-
-const escape_svelty = (str) => 
-	str
-		.replace(
-			/[{}`]/g,
-			(c) => ({ '{': '&#123;', '}': '&#125;', '`': '&#96;' }[c])
-		)
-		.replace(/\\([trn])/g, '&#92;$1');
-
-async function highlighter(code, lang) {
-	const highlighter = await shiki.getHighlighter({ theme: "css-variables" });
-	return escape_svelty(highlighter.codeToHtml(code, {
-		lang: lang || "text",
-	}));
-}
+import { mdsvexGlobalComponents } from "./src/lib/utils/mdsvex-global-components.js";
+import { highlighter } from "./src/lib/utils/highlight.js";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -28,6 +15,17 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		vitePreprocess(),
+		mdsvexGlobalComponents({
+			dir: `$lib/babel`,
+			list: [
+				["Center", "center.svelte"],
+				["ContentImg", "content-img.svelte"],
+				["Navigate", "navigate.svelte"],
+				["Note", "note.svelte"],
+				["CodeFence", "code-fence.svelte"],
+			],
+			extensions: [".md", ".svx"],
+		}),
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			remarkPlugins: [
@@ -39,7 +37,7 @@ const config = {
 				rehypeKatex,
 			],
 			highlight: {
-				highlighter: highlighter,
+				highlighter,
 			}
 		})
 	],

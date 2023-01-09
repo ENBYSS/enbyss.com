@@ -3,7 +3,7 @@ title: The Beginning.
 description: A rambling about how I created this whole thing.
 category: article # name of directory
 image:
-  src: "the-beginning.png"
+  src: "generic.png"
   alt: "the beginning"
 createdAt: 2020-11-12
 updatedAt: 2020-11-12

@@ -71,10 +71,10 @@ export interface WSStream {
     type: "series" | "single"
     link: string
     status: "in_progress" | "hiatus" | "suspended" | "complete" | "perpetual"
-    reason?: string
+    reason: string
     started: string
-    ended?: string
-    tags?: string
+    ended: string
+    tags: string
 }
 
 // Video

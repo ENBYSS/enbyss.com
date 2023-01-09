@@ -3,7 +3,7 @@ title: Life's Hole
 description: Keep moving, or the hole will get you.
 category: article
 image:
-    src: "getting-stuck-in-lifes-hole.png"
+    src: "generic.png"
     alt: "getting stuck in lifes hole"
 createdAt: 2020-12-08
 updatedAt: 2020-12-08

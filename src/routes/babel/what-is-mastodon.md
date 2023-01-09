@@ -3,7 +3,7 @@ title: Mastodon - What is it?
 description: As explained by someone who's terrible at explaining things.
 category: article
 image:
-    src: 'what-is-mastodon.webp'
+    src: 'mastodon.png'
     alt: 'What is Mastodon?'
 createdAt: 2022-11-20
 updatedAt: 2022-11-20
