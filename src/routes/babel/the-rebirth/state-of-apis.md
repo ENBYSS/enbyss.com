@@ -12,11 +12,6 @@ createdAt: 2022-08-29
 updatedAt: 2022-08-29
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 Last time, I went on about the theme switcher, and I showed a bunch of code.
 
 ```ts

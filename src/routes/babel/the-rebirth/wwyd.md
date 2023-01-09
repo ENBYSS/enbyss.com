@@ -12,10 +12,6 @@ createdAt: 2022-08-23
 updatedAt: 2022-08-23
 ---
 
-<script>
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 In the beginning, there was the _main_ branch. And when the bells rang, and the inspiration tolled, the birth of _recreation/nuxt3_ became true.
 
 Today, we will revisit the first document that I published on this site - understand everything that I did, and how to recreate the whole thing better. Just incase you haven't seen it - [here you go](/babel/article/the-beginning). It's pretty long apparently, and some things in it are... kinda wrong? But y'know, it was the beginning and I was much different back then.

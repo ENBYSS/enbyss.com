@@ -12,11 +12,6 @@ createdAt: 2022-08-20
 updatedAt: 2022-08-20
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 Hey! Been a while since I wrote something. You might be noticing that things are a bit outta whack. That's normal. I've rebuilt my whole entire site afterall.
 
 _Why'd I do that?_ Welp, that's what we're getting into. But that's not the only thing. I want to get into how I did it, and explain that too for the technical people who are curious. Although, I do want to say that I'm no professional web developer.

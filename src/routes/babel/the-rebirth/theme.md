@@ -12,11 +12,6 @@ createdAt: 2022-08-25
 updatedAt: 2022-08-25
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-    import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 I always wanted to have theming on my site.
 
 From the moment I started 2 years ago, I knew I wanted to have a dark theme and a light theme. So, I looked into it and - in my inexperience - I bodged something together. The main concept was this...

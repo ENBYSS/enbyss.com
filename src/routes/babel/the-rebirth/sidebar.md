@@ -12,10 +12,6 @@ createdAt: 2022-08-28
 updatedAt: 2022-08-28
 ---
 
-<script>
-  import Navigate from "$lib/babel/navigate.svelte";
-</script>
-
 One of the most transformative changes between the old site and now is the method of navigation. Before, it was a header stuck at the top of the window, with all sorts of buttons and a logo that sent you back to the home page. _As you can see,_ said bar is nowhere to be found. Instead, a button in the top-left screen that opens up a sidebar.
 
 I'll go over the why and how - both questions have pretty interesting parts in them.
