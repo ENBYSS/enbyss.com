@@ -15,14 +15,8 @@
     stores?.patreon.set(patreon);
     stores?.tip.set(tips);
 
-    stores?.youtube.subscribe(y => {
-        youtube = y;
-        youtube_cache = new Date().toString();
-    });
-    stores?.patreon.subscribe(p => {
-        patreon = p;
-        patreon_cache = new Date().toString();
-    });
+    stores?.youtube.subscribe(y => youtube = y);
+    stores?.patreon.subscribe(p => patreon = p);
     stores?.tip.subscribe(t => tips = t);
 
     let youtube_cache = new Date().toString();
