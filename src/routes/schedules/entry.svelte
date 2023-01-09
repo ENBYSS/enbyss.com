@@ -72,11 +72,11 @@
         ]
         
         return {
-            hour: date.getHours(),
-            minutes: date.getMinutes(),
+            hour: date.getHours().toLocaleString("en", { minimumIntegerDigits: 2 }),
+            minutes: date.getMinutes().toLocaleString("en", { minimumIntegerDigits: 2 }),
             seconds: date.getSeconds(),
             day: format_date(date.getDate()),
-            weekday: weekdays[date.getDay()],
+            weekday: weekdays[date.getDay()-1],
             month: months[date.getMonth()],
         }
     })()
@@ -90,7 +90,10 @@
     <div class="item-info">
         <div class="date">
             <p class="day"> {datetime.weekday} </p>
-            <p class="full"> {datetime.day} {datetime.month} </p>
+            <p class="full"> 
+                {datetime.day} {datetime.month}
+                <span class="time"> {datetime.hour}:{datetime.minutes} </span>
+            </p>
         </div>
         <div class="topic">
             <span class="name"> {name} </span>
@@ -154,6 +157,12 @@
                 color: var(--saturated-col-1);
                 font-weight: 600;
                 font-size: 1.5em;
+
+                .time {
+                    color: var(--saturated-col-2);
+                    font-size: .8em;
+                    font-style: italic;
+                }
             }
         }
 
