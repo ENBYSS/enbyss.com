@@ -151,11 +151,6 @@ You lose all autocomplete functionality here. What's autocomplete? In a nutshell
 
 Here's the problem - how is the editor supposed to know that `self.pets` is a _list of pets?_ There only reason _we_ know is because we designed the function - but if someone else looked at `Person`, they could easily wonder what `pets` is supposed to be set as. The answer here is that _there isn't a type_. You just need to pass something that has a `call_home()` function.
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-    import Center from "$lib/babel/center.svelte";
-</script>
-
 <Note>
 This is called _duck typing_, so called because of the following phrase: <br/> <br/>
 

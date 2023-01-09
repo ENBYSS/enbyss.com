@@ -11,10 +11,6 @@ createdAt: 2022-12-07
 updatedAt: 2022-12-07
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-</script>
-
 Hey! Decided that since Blaseball is coming back, and my tools are effectively dead due to an impending radical change (in addition to being outdated logic - updated my site so...) - I might as well document my tools to share knowledge I've gained. Maybe it'll help, even if APIs change significantly. One thing however - I likely won't be documenting the *design*, meaning the HTML/CSS. That's more of a personal design choice that depends on external CSS, including *tailwind* as well. 
 
 Especially because I've migrated from using *tailwind* to *UnoCSS* heh.

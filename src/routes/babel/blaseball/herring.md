@@ -9,10 +9,6 @@ createdAt: 2022-12-21
 updatedAt: 2022-12-21
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-</script>
-
 I didn't expect this tool to get as popular as it did, but at the same time I likely should have. Effectively it served as a user interface for people who wanted to be *in the know* for new events that have occurred.
 
 # The Herring Mechanic
