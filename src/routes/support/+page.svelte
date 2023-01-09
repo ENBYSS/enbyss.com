@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
 	import Head from "$lib/head.svelte";
 	import { stores } from "$lib/stores/site-data";
 	import { fix_and_outro_and_destroy_block } from "svelte/internal";
@@ -11,9 +10,6 @@
     let youtube = data.youtube;
     let patreon = data.patreon;
     let tips = data.tips;
-
-    let youtube_cache = new Date().toString();
-    let patreon_cache = new Date().toString();
 
     stores?.youtube.set(youtube);
     stores?.patreon.set(patreon);
@@ -29,14 +25,15 @@
     });
     stores?.tip.subscribe(t => tips = t);
 
+    let youtube_cache = new Date().toString();
+    let patreon_cache = new Date().toString();
+
     $: if (youtube) {
-        console.log(`Update to YOUTUBE detected at ${new Date()}`);
-        if (browser) console.log(youtube);
+        youtube_cache = new Date().toString();
     }
 
     $: if (patreon) {
-        console.log(`Update to PATREON detected at ${new Date()}`);
-        if (browser) console.log(patreon);
+        patreon_cache = new Date().toString();
     }
 
     const currency_map = {

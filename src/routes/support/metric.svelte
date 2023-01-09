@@ -4,23 +4,20 @@
     export let goal: string
     export let bgColor: string
     export let link: string
-    export let cache_date: string | undefined
+    export let cache_date: string
 
     let cssProps = [
         `--label-bg: ${bgColor}`,
     ].join(';\n');
 
-    const formatted_date = (() => {
-        if (!cache_date) return;
-        return new Date(cache_date).toLocaleDateString('en', {
-            month: "short",
-            day: "numeric",
-            hour12: false,
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric",
-        })
-    })();
+    $: formatted_date = new Date(cache_date).toLocaleDateString('en', {
+        month: "short",
+        day: "numeric",
+        hour12: false,
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+    });
 </script>
 
 <a href={link} style={cssProps} class="metric w-96 h-30 text-center flex rounded-r-md shadow-2xl relative gap-4">
