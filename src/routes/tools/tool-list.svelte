@@ -26,6 +26,9 @@
 </ul>
 
 <style lang="scss">
+    ul {
+        padding: 0;
+    }
     .tool-list {
         display: flex;
         flex-direction: column;
