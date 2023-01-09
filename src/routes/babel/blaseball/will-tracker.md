@@ -11,11 +11,6 @@ createdAt: 2022-12-23
 updatedAt: 2022-12-23
 ---
 
-<script>
-    import Note from "$lib/babel/note.svelte";
-    import ContentImg from "$lib/babel/content-img.svelte";
-</script>
-
 # ! Disclaimer !
 Hey! This won't be like the other two. [Gift Tracker](/babel/docs/blaseball/gift-progress) was a look into a simple tool, and [Herring Reveals](/babel/docs/blaseball/herring) was a significantly more complicated look. As the final entry of the Expansion Era Documentation series, this escalates things by being a tool that *I had to delist*.
 

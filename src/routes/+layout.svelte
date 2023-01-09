@@ -25,7 +25,7 @@
     stores?.ticker.subscribe(m => messages = m);
 </script>
 
-<div class={$theme}>
+<div class="app {$theme}">
     <Sidebar />
     
     <div class="fixed w-full h-10 top-0 left-0 z-30">
@@ -43,7 +43,7 @@
     </div>
 
     {#key data.pathname}
-        <div in:fly={{ x: -10, duration: 200, delay: 200 }} out:fly={{ x: 5, duration: 200 }}>
+        <div class="main-content" in:fly={{ x: -10, duration: 200, delay: 200 }} out:fly={{ x: 5, duration: 200 }}>
             <slot />
         </div>
     {/key}
@@ -138,5 +138,16 @@
             filter: blur(30px) sepia(1.0) saturate(500%) hue-rotate(-30deg) brightness(30%);
             transform: scale(1.1);
         }
+    }
+
+    .app {
+        scrollbar-color: var(--base-col-1) var(--base-col-3);
+        overflow-y: scroll;
+        height: 100vh;
+    }
+
+    :global(html) {
+        overflow: hidden;
+        height: 100%;
     }
 </style>
