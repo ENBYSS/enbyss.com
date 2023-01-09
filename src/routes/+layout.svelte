@@ -47,9 +47,9 @@
             <slot />
         </div>
     {/key}
+    
+    <div class="mb-30" />
 </div>
-
-<div class="mb-30" />
 
 <style lang="scss">
     #background {
