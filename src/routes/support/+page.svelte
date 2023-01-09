@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import Head from "$lib/head.svelte";
 	import { stores } from "$lib/stores/site-data";
 	import { fix_and_outro_and_destroy_block } from "svelte/internal";
@@ -11,23 +12,31 @@
     let patreon = data.patreon;
     let tips = data.tips;
 
+    let youtube_cache = new Date().toString();
+    let patreon_cache = new Date().toString();
+
     stores?.youtube.set(youtube);
     stores?.patreon.set(patreon);
     stores?.tip.set(tips);
 
-    stores?.youtube.subscribe(y => youtube = y);
-    stores?.patreon.subscribe(p => patreon = p);
+    stores?.youtube.subscribe(y => {
+        youtube = y;
+        youtube_cache = new Date().toString();
+    });
+    stores?.patreon.subscribe(p => {
+        patreon = p;
+        patreon_cache = new Date().toString();
+    });
     stores?.tip.subscribe(t => tips = t);
 
-    let youtube_cache = new Date().toString();
-    let patreon_cache = new Date().toString();
-
     $: if (youtube) {
-        youtube_cache = new Date().toString();
+        console.log(`Update to YOUTUBE detected at ${new Date()}`);
+        if (browser) console.log(youtube);
     }
 
     $: if (patreon) {
-        patreon_cache = new Date().toString();
+        console.log(`Update to PATREON detected at ${new Date()}`);
+        if (browser) console.log(patreon);
     }
 
     const currency_map = {
@@ -77,7 +86,7 @@
             <a class="italic font-700" href="/patreon">Patrons</a> of the Void
         </h1>
 
-        {#each [...patreon.tiers].sort((a, b) => a.attributes.amount_cents ? -1 : 1) as tier}
+        {#each [...patreon.tiers].sort((a, b) => b.attributes.amount_cents - a.attributes.amount_cents) as tier}
             <div>
                 <h2 class="text-7 font-600 italic text-base-col-2"> {tier.attributes.title} </h2>
                 {#each patreon.members.filter(m => m.pledge_amount === tier.attributes.amount_cents) as member}
