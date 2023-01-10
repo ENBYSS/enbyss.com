@@ -96,6 +96,7 @@ export interface WSScheduleItem {
     when: string
     type: "video" | "stream"
     link: string
+    image: string
     description?: string
     whenReleased?: string
 }

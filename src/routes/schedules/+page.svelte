@@ -43,7 +43,7 @@
 
         <div class="mx-auto max-w-800px flex flex-col bg-saturated-col-2 mb-5 p-4 pb-8 gap-x-4 z-10 rounded-2">
             <h1 class="text-center text-xl font-semibold text-base-col-2 mb-2">
-                <!-- stream name -->
+                <!-- TODO: stream name -->
             </h1>
             <div class="w-90% mx-auto">
                 <div class="relative overflow-hidden rounded-md h-0 pb-[56.25%]">
