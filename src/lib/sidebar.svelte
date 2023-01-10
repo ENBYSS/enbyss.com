@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { clickOutside } from "./directives/click_outside";
     import LinkBar from "./link-bar.svelte";
-	import Menu from "./menu.svelte";
-	import { theme } from "./stores";
 	import ThemeBar from "./theme-bar.svelte";
     import Ticker from "./ticker.svelte";
 
@@ -31,7 +29,7 @@
         </Ticker>
     </button>
 
-    <nav class="fixed overflow-y-scroll absolute top-0 w-[25rem] max-w-full h-full z-99 sidebar bg-base-col-3 {collapsed ? 'brightness-150 -left-[25rem]' : '-left-0'}">
+    <nav class="fixed overflow-y-auto overflow-x-hidden absolute top-0 w-[25rem] max-w-full h-full z-99 sidebar bg-base-col-3 {collapsed ? 'brightness-150 -left-[25rem]' : '-left-0'}">
 
         <a on:click={() => collapsed = !collapsed} href="/" class="sidebar-link pointer w-full not-b h-20 flex justify-center items-center bg-base-col-3 hover:brightness-150 focus:brightness-150">
             <div class="text-4xl italic font-600 z-10">

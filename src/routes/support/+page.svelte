@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Head from "$lib/head.svelte";
 	import { stores } from "$lib/stores/site-data";
-	import { fix_and_outro_and_destroy_block } from "svelte/internal";
 	import type { PageData } from "./$types";
 	import Metric from "./metric.svelte";
 
@@ -53,7 +52,7 @@
 />
 
 <div class="flex flex-col gap-8">
-    <div class="flex flex-wrap w-screen justify-center gap-5">
+    <div class="flex flex-wrap justify-center gap-5">
         <Metric
             label="main"
             value={youtube.stats.main.subs}

@@ -142,7 +142,7 @@
 
     .app {
         scrollbar-color: var(--base-col-1) var(--base-col-3);
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 100vh;
     }
 
