@@ -88,4 +88,4 @@ jobs:
             cp -r ${{ matrix.server.path }}/releases/${GITHUB_SHA}/* ${{ matrix.server.path }}/production/
 
             cd ${{ matrix.server.path}}/production
-            # npm run redeploy
+            docker compose up -d --build --force-recreate
