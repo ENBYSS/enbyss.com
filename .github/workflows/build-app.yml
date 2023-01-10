@@ -29,7 +29,7 @@ jobs:
       - name: Prepare artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz node_modules package.json build
+        run: tar -czf "${GITHUB_SHA}".tar.gz node_modules package.json build Dockerfile
 
       - name: Upload production artifacts
         uses: actions/upload-artifact@v3
