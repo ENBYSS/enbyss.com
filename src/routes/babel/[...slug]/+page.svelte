@@ -7,6 +7,8 @@
 
     const metadata = data.meta;
 
+    console.log(metadata);
+
     const format_date = (date: string) => new Date(date).toLocaleDateString('en', {
         year: "numeric",
         month: "short",
@@ -70,6 +72,9 @@
             />
             ENBYSS
         </a>
+        <span class="reading-time">
+            ~{metadata.readingTime.text} 
+        </span>
     </h3>
 
     <hr class="mx-auto my-5 bg-pop-col-1 border-none h-1 w-full"/>
@@ -113,5 +118,11 @@
         color: var(--pop-col-1);
         padding: .1em .6em;
         border-radius: .4em;
+    }
+
+    .reading-time {
+        font-size: .9em;
+        font-style: italic;
+        font-weight: 400;
     }
 </style>

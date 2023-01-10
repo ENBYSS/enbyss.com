@@ -45,6 +45,7 @@
                         </p>
                     {/if}
                 </div>
+                <p class="post-length"> {post.meta.readingTime.text} </p>
             </div>
         </a>
     </li>
@@ -66,6 +67,7 @@
     }
 
     .post-container {
+        position: relative;
         display: flex;
         justify-content: flex-start;
         flex-grow: 1;
@@ -129,6 +131,14 @@
                 font-style: italic;
                 font-size: .9em;
             }
+        }
+
+        .post-length {
+            position: absolute;
+            bottom: .8em;
+            right: .8em;
+            font-size: .9em;
+            color: var(--pop-col-1);
         }
     }
 </style>

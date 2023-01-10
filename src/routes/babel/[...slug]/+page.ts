@@ -10,6 +10,12 @@ interface Metadata {
     }
     createdAt: string
     updatedAt: string
+    readingTime: {
+        text: string
+        minutes: number
+        time: number
+        words: number
+    }
 }
 
 export const load = (async ({ params }) => {

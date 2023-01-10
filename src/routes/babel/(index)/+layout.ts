@@ -13,6 +13,12 @@ export interface Post {
         series?: string
         category?: string
         tags?: string[]
+        readingTime: {
+            text: string
+            minutes: number
+            time: number
+            words: number
+        }
     }
     path: string
 }
