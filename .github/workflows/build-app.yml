@@ -29,7 +29,7 @@ jobs:
       - name: Prepare artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz node_modules package.json build Dockerfile
+        run: tar -czf "${GITHUB_SHA}".tar.gz node_modules package.json build Dockerfile docker-compose.yml
 
       - name: Upload production artifacts
         uses: actions/upload-artifact@v3
@@ -88,4 +88,4 @@ jobs:
             cp -r ${{ matrix.server.path }}/releases/${GITHUB_SHA}/* ${{ matrix.server.path }}/production/
 
             cd ${{ matrix.server.path}}/production
-            npm run redeploy
+            # npm run redeploy
