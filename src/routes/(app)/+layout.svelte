@@ -3,7 +3,7 @@
 	import Sidebar from "$lib/sidebar.svelte";
 
     import "uno.css";
-    import "../app.scss";
+    import "../../app.scss";
 	import type { PageData } from "./$types";
 	import { theme } from "$lib/stores";
 	import IpxImage from "$lib/ipx-image.svelte";
