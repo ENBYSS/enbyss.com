@@ -25,6 +25,10 @@ export interface PEmojiRun extends PRun {
     isStandard: boolean
 }
 
+export const is_text_run = (value: PRun): value is PTextRun => value.type === "text";
+export const is_link_run = (value: PRun): value is PLinkRun => value.type === "link";
+export const is_emoji_run = (value: PRun): value is PEmojiRun => value.type === "emoji";
+
 export interface PMessage {
     author: {
         name: string

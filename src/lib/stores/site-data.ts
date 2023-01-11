@@ -137,13 +137,16 @@ export const setup_chat_data = () => {
         return invalidate; 
     }
 
+    const add_message = (message: PMessage) => update(curr => [...curr, [message.messageId, message]]);
+    const remove_message = (id: string) => update(curr => curr.filter(item => item[0] === id));
+
     socket.on("chat:add", data => {
-        if (!is_bot(data.msg)) update(curr => [...curr, [data.msg.messageId, data.msg]]);
+        if (!is_bot(data.msg)) add_message(data.msg);
         else console.warn(`Message flagged: (by: ${data.msg.author}) - ${data.msg.message}`);
     });
 
     socket.on("chat:remove", data => {
-        update(curr => curr.filter(item => item[0] === data.id));
+        remove_message(data.id);
     });
 
     return {
