@@ -4,7 +4,7 @@ description: I've mucked about with a lot of APIs, and in so doing gained knowle
 category: article
 image:
     src: "world-of-apis.png"
-    alt: "assorted api upgrades"
+    alt: "world of apis"
 createdAt: 2023-01-11
 updatedAt: 2023-01-11
 ---
