@@ -9,14 +9,14 @@ export let prerender = true;
 const limit = pLimit(10);
 
 export const fetchMarkdownPosts = async () => {
-    const allPostFiles: Glob = import.meta.glob('../../routes/babel/**/*.md');
+    const allPostFiles: Glob = import.meta.glob('../../routes/**/*.md');
     const iterablePostFiles = Object.entries(allPostFiles);
 
     const extractPost = async (path: string, resolver: () => any) => {
         const { metadata } = await resolver();
         return {
             meta: metadata,
-            path: path.slice(12, -3),
+            path: path.slice(18, -3),
         }
     };
 
