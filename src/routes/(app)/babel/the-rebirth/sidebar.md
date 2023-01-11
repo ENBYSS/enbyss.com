@@ -156,6 +156,7 @@ Welcome to _state management_. But not just that - next time, _we'll be going in
     }}
     next={{
         link: "/babel/the-rebirth/state-of-apis",
+        disabled: true,
         name: "State of APIs",
     }}
 />
