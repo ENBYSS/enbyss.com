@@ -4,7 +4,8 @@ import { mdsvex } from "mdsvex";
 import remarkMath from 'remark-math';
 import remarkReadingTime from "remark-reading-time";
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeKatex from 'rehype-katex';
+// import rehypeKatex from 'rehype-katex';
+import rehypeKatexSvelte from 'rehype-katex-svelte';
 import rehypeSlug from 'rehype-slug';
 import shiki from "shiki";
 import { mdsvexGlobalComponents } from "./src/lib/utils/mdsvex-global-components.js";
@@ -30,13 +31,13 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			remarkPlugins: [
-				remarkReadingTime(),
 				remarkMath,
+				remarkReadingTime(),
 			],
 			rehypePlugins: [
 				rehypeSlug,
 				rehypeAutolinkHeadings,
-				rehypeKatex,
+				rehypeKatexSvelte,
 			],
 			highlight: {
 				highlighter,

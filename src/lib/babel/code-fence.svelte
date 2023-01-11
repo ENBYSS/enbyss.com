@@ -48,11 +48,11 @@
 <style lang="scss">
     .code-wrapper {
         width: 120%;
-        margin: 0 -50px;
+        margin: 0 -3.4em;
     }
 
     .code-info {
-        background: var(--base-col-3);
+        background: var(--saturated-col-3);
 
         display: flex;
         gap: .5em;
@@ -89,6 +89,7 @@
 
             scrollbar-color: var(--base-col-1) var(--base-col-3);
             line-height: 1.5;
+            border-radius: 0;
         }
 
         :global(.shiki::-webkit-scrollbar-thumb) {

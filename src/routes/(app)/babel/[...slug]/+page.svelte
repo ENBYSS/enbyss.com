@@ -26,7 +26,7 @@
 
 <article class="box shadow-2xl rounded-3 mx-auto max-w-80ch flex flex-col items-center pt-0 pb-8 mb-16 h-entry overflow-hidden">
     {#if metadata.image && metadata.image.src && metadata.image.src !== 'generic.png'}
-        <div class="w-120% mb-4 overflow-hidden">
+        <div class="w-120% overflow-hidden">
             <IpxImage 
                 css="w-full h-full"
                 src={`https://files.enbyss.com/images/babel/${metadata.image.src}`} 
@@ -42,7 +42,7 @@
         </div>
     {/if}
 
-    <h1 class="text-8 font-700 italic p-name text-pop-col-1"> {metadata.title} </h1>
+    <h1 class="mt-6 text-8 font-700 italic p-name text-pop-col-1"> {metadata.title} </h1>
     <h2 class="text-5 font-500 italic text-pop-col-2 p-summary -mt-1"> {metadata.description} </h2>
 
     <h3 class="mt-1">
