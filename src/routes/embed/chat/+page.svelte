@@ -83,7 +83,6 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        overflow: auto;
         scrollbar-width: none;
 
         --dark: hsl(340 70% 10%);
