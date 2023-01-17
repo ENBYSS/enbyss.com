@@ -63,9 +63,8 @@ const tools: Tool[] = [
 ]
 
 export const load = (async ({ url }) => {
-    const active_category = url.pathname.match(/tools\/([a-z]+)/)?.[1] ?? "all";
+    const toolLink = url.pathname.match(/tools\/([a-z]+)/)?.[1];
     return {
         tools,
-        active_category,
     };
 }) satisfies LayoutLoad;
