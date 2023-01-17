@@ -22,6 +22,7 @@
         "unfinished",
         "demo",
         "upcoming",
+        "realized",
     ]
 
     const filter = {
@@ -59,6 +60,7 @@
             "unfinished": 50,
             "demo": 25,
             "upcoming": 1,
+            "realized": 0,
         }
 
         const score = (item: typeof a) => interests[item.interest] * status[item.status];

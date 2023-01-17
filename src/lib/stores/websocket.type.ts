@@ -123,6 +123,6 @@ export interface WSConsidered {
     name: string
     thoughts: string
     interest: "none" | "minimal" | "some" | "a lot" | "overwhelming"
-    status: "ready" | "unfinished" | "demo" | "upcoming"
+    status: "ready" | "unfinished" | "demo" | "upcoming" | "realized"
     planned_release?: string
 }

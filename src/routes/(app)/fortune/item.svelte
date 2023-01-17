@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Considered } from "./+page";
+	import type { WSConsidered } from "$lib/stores/websocket.type";
 
-    export let item: Considered;
+    export let item: WSConsidered;
 
     const interest_style = {
         "none": "hue-rotate-30",
@@ -16,6 +16,7 @@
         "unfinished": "hue-rotate-270",
         "demo": "hue-rotate-240",
         "upcoming": "hue-rotate-210",
+        "realized": "hue-rotate-240",
     }
 </script>
 
