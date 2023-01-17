@@ -51,7 +51,7 @@
             <div class="takeover-info">
                 <p>
                     Messages: 
-                    <span>{group.items.length}</span>
+                    <span>{group.items.filter(i => i.message.length > 0).length}</span>
                 </p>
                 <p>
                     Entities involved: 
