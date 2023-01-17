@@ -59,6 +59,18 @@ const tools: Tool[] = [
                 status: "complete",
             },
         ]
+    },
+    {
+        link: "blaseball",
+        name: "Blaseball",
+        items: [
+            {
+                name: "Takeovers",
+                description: "Lists all takeovers that happened in the Return, grouped up.",
+                link: "blaseball-takeovers",
+                status: "complete",
+            }
+        ]
     }
 ]
 
