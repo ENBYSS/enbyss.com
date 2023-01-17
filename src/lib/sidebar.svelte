@@ -99,7 +99,7 @@
             border-radius: .8em;
 
             &:hover {
-                padding: 0.5em 1.0em;
+                padding: 0.5em 1.0em !important;
             }
         }
         :global(.option-btn.active) {
