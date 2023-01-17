@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Head from "$lib/head.svelte";
+	import ThemeBar from "$lib/theme-bar.svelte";
 	import Title from "$lib/title.svelte";
 	import autoAnimate from "@formkit/auto-animate";
     import type { PageData } from "./$types";
@@ -23,11 +25,20 @@
             reveal = [...reveal, date];
         }
     }
+
+    const unique = <T>(value: T, index: number, self: T[]) => self.indexOf(value) === index;
 </script>
+
+<Head
+    title="Blaseball Takeovers"
+    description="Lists all takeovers that happened during the Return."
+    image="backgrounds/dark.webp"
+/>
 
 <div class="page-wrapper">
     <Title>
         <h1> Takeovers </h1>
+        <h2> (v1.0.0) </h2>
     </Title>
 
     {#each data.takeovers as group (group.from)}
@@ -37,6 +48,16 @@
                 ~
                 <date datetime={group.to}>{dateFormat(group.to)}</date>
             </button>
+            <div class="takeover-info">
+                <p>
+                    Messages: 
+                    <span>{group.items.length}</span>
+                </p>
+                <p>
+                    Entities involved: 
+                    <span>{group.items.map(i => i.by).filter(i => i && i.length > 0).filter(unique).join(', ')}</span>
+                </p>
+            </div>
             {#if reveal.includes(group.from)}
                 {#each group.items as message}
                     {#if message.message.length > 0 }
@@ -85,6 +106,17 @@
                     background: var(--saturated-col-1);
                     date {
                         color: var(--saturated-col-3);
+                    }
+                }
+            }
+
+            .takeover-info {
+                margin: .6em auto;
+                text-align: center;
+
+                p {
+                    span {
+                        color: var(--saturated-col-1);
                     }
                 }
             }
