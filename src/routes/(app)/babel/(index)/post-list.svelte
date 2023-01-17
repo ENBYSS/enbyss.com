@@ -3,7 +3,7 @@
     import autoAnimate from "@formkit/auto-animate";
 	import type { Post } from "./+layout";
 
-    const get_img = (path: string) => `https://files.enbyss.com/images/babel/${path}`;
+    const get_img = (path: string) => `babel/${path}`;
     const format_date = (date: string) => new Date(date).toLocaleDateString('en', {
         year: "numeric",
         month: "short",

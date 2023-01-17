@@ -46,4 +46,4 @@ export const machine_for_recipe = (recipe: Recipe) => {
 }
 
 export const image_url_for = (name: string) =>
-    `https://files.enbyss.com/images/satisfactory/${name.split(' ').map(a => a.charAt(0).toUpperCase() + a.slice(1)).join('')}.webp`;
+    `satisfactory/${name.split(' ').map(a => a.charAt(0).toUpperCase() + a.slice(1)).join('')}.webp`;
