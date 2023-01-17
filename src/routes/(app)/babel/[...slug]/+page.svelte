@@ -29,7 +29,7 @@
         <div class="w-120% overflow-hidden">
             <IpxImage 
                 css="w-full h-full"
-                src={`https://files.enbyss.com/images/babel/${metadata.image.src}`} 
+                src={`babel/${metadata.image.src}`} 
                 alt={metadata.image.alt}
                 ipx={{
                     format: "webp",
@@ -64,7 +64,7 @@
         <a class="h-card p-author mincontent text-base-col-2 font-500" rel="author" href="https://enbyss.com">
             <IpxImage 
                 css="icon u-photo w-5 inline" 
-                src="https://files.enbyss.com/images/enbyss.png" 
+                src="enbyss.png" 
                 alt="Me, heavily edited." 
                 ipx={{
                     width: 30,

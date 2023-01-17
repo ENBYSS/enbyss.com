@@ -39,7 +39,7 @@
     <div class="h-15" id="_tickerbuffer"></div>
 
     <div id="background">
-        <IpxImage src={`https://files.enbyss.com/images/backgrounds/${theme_bgs[$theme]}`} alt="background" ipx={{ width: 400, quality: 70 }} />
+        <IpxImage src={`backgrounds/${theme_bgs[$theme]}`} alt="background" ipx={{ width: 400, quality: 70 }} />
     </div>
 
     {#key data.pathname}

@@ -40,4 +40,4 @@
     })();
 </script>
 
-<img src={`https://enbyss.com/_ipx/${ipx_params}/${src}`} {alt} class={`${css}`}/>
+<img src={`https://images.enbyss.com/${ipx_params}/${src}`} {alt} class={`${css}`}/>
