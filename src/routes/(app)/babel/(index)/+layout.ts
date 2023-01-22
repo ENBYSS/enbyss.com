@@ -19,6 +19,10 @@ export interface Post {
             time: number
             words: number
         }
+        credit?: {
+            writers: string[]
+            editors: string[]
+        }
     }
     path: string
 }

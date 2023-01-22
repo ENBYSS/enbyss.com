@@ -1,22 +1,6 @@
 import { error } from "@sveltejs/kit";
+import type { Post } from "../(index)/+layout";
 import type { PageLoad } from "./$types";
-
-interface Metadata {
-    title: string
-    description: string
-    image?: {
-        src: string
-        alt: string
-    }
-    createdAt: string
-    updatedAt: string
-    readingTime: {
-        text: string
-        minutes: number
-        time: number
-        words: number
-    }
-}
 
 export const load = (async ({ params }) => {
     const filePath = `../${params.slug}.md`;
@@ -37,6 +21,6 @@ export const load = (async ({ params }) => {
         content,
         title,
         date,
-        meta: post.metadata as Metadata,
+        meta: post.metadata as Post["meta"],
     }
 }) satisfies PageLoad;

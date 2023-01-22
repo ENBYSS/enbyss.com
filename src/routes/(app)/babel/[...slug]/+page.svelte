@@ -59,19 +59,37 @@
         {/if}
     </h3>
 
-    <h3 class="text-4 font-400 text-pop-col-1">
-        By
-        <a class="h-card p-author mincontent text-base-col-2 font-500" rel="author" href="https://enbyss.com">
-            <IpxImage 
-                css="icon u-photo w-5 inline" 
-                src="enbyss.png" 
-                alt="Me, heavily edited." 
-                ipx={{
-                    width: 30,
-                }}
-            />
-            ENBYSS
-        </a>
+    <h3 class="text-4 font-400">
+        {#if metadata.credit}
+            <p class="text-pop-col-1">
+                Written by
+                <span class="h-card p-author mincontent text-base-col-2 font-500">
+                    {metadata.credit.writers.join(', ')}
+                </span>
+            </p>
+
+            <p class="text-pop-col-1">
+                Edited by
+                <span class="h-card p-editor mincontent text-base-col-2 font-500">
+                    {metadata.credit.editors.join(', ')}
+                </span>
+            </p>
+        {:else}
+            <p class="text-pop-col-1">
+                By
+                <a class="h-card p-author mincontent text-base-col-2 font-500" rel="author" href="https://enbyss.com">
+                    <IpxImage 
+                        css="icon u-photo w-5 inline" 
+                        src="enbyss.png" 
+                        alt="Me, heavily edited." 
+                        ipx={{
+                            width: 30,
+                        }}
+                    />
+                    ENBYSS
+                </a>
+            </p>
+        {/if}
         <span class="reading-time">
             ~{metadata.readingTime.text} 
         </span>
@@ -124,5 +142,18 @@
         font-size: .9em;
         font-style: italic;
         font-weight: 400;
+    }
+
+    :global(.prose :is(table)) {
+        width: fit-content;
+        margin: 0 auto;
+        border-spacing: .8em 0em;
+        border-collapse: separate;
+    }
+
+    :global(.prose table thead :is(th)) {
+        background: var(--saturated-col-1);
+        color: var(--saturated-col-3);
+        border-radius: .5em;
     }
 </style>
