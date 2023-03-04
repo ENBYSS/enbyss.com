@@ -18,8 +18,8 @@
 
 <Head
     title={metadata.title}
-    description={metadata.description}
-    image={`content/${metadata.image?.src ?? 'backgrounds/dark.webp'}`}
+    description="{metadata.description} - {metadata.credit ? `Written by ${metadata.credit.writers.join(', ')} and edited by ${metadata.credit.editors.join(', ')}` : 'by enbyss'}"
+    image={`babel/${metadata.image?.src ?? 'backgrounds/dark.webp'}`}
 >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 </Head>
