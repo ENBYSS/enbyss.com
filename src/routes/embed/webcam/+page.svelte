@@ -37,7 +37,11 @@
         return `${hrs}:${mins}:${secs}`;
     }
 
-    const started_from = data.youtube.liveData?.started ? Date.parse(data.youtube.liveData?.started) : undefined;
+    let started_from: number;
+    $: if (youtube.liveData) {
+        started_from = Date.parse(youtube.liveData.started)
+    }
+
     let stopwatch: string;
     $: if (now) {
         stopwatch = debug ? time_from(debug_time) : time_from(started_from);
